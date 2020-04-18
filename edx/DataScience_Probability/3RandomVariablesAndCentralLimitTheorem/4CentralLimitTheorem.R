@@ -97,3 +97,23 @@ pnorm(0,mu,se)
 ## It's about 5%.
 ## Which, is in very good agreement-- with the Monte Carlo simulation we ran.
 
+
+## KEY POINTS:
+## The expected value of a random variable, E[X]=mu, is the average of the 
+## values in the urn. This represents the expectation of one draw. 
+## The standard error of one draw of a random variable is the standard deviation 
+## of the values in the urn.
+## The expected value of the sum of draws is the number of draws times the 
+## expected value of the random variable. 
+## The standard error of the sum of independent draws of a random variable is the
+## square root of the number of draws times the standard deviation of the urn. 
+
+## EQUATIONS:
+## These equations apply to the case where there are only two outcomes, a and
+## b with proportions p and 1???p respectively. The general principles above also 
+## apply to random variables with more than two outcomes.
+
+## Expected value of a random variable: ap+b(1-p)
+## Expected value of the sum of n draws of a random variable:  n * ap+b(1-p)
+## Standard deviation of an urn with two values: |b-a|sqrt(p(1-p)) 
+## Standard error of the sum of n draws of a random variable: sqrt(n) |b-a|sqrt(p(1-p))
