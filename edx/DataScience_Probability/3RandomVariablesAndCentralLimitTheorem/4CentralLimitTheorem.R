@@ -110,7 +110,7 @@ pnorm(0,mu,se)
 
 ## EQUATIONS:
 ## These equations apply to the case where there are only two outcomes, a and
-## b with proportions p and 1???p respectively. The general principles above also 
+## b with proportions p and 1-p respectively. The general principles above also 
 ## apply to random variables with more than two outcomes.
 
 ## Expected value of a random variable: ap+b(1-p)
