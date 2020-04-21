@@ -1,0 +1,69 @@
+BLOCKCHAIN:
+~~~~~~~~~~
+
+History:
+- Massive potential in present and future.
+- Satashi Nakamoto - Bitcoin: A peer to peer Electronic Cash System.
+- Block + Chain
+- Technology scaled-up after PricewaterhouseCoopers, Ernst & Young, Deloitte, Touche Tohmatsu and KPMG showed a keen interest
+- Encryption + Cryptography + Privacy + Time-stamp + etc. --> Evolved version of pre-existing techniques => Blockchain
+- Public + private key encryption -> foundation of Blockchain
+
+Features:
+- Distributed - due to its de-centralised characteristic. Removes the concept of central authorities like banks.
+- Permissioned - provides users with the ability to decide who in the blockchain network has the authority to validate the blocks under the transaction. This allows privacy.
+- Secure - assured by cryptography.
+
+Success factors of blockchain:
+- These factors boost the success of blockchain as a technology in the market.
+	> Trust
+	> Simplicity
+	> Scalability - The energy requirements of blockchain are growing daily and this puts a limit on the scalability on the technology beyond the current stage if these energy requirements are not addressed. Thus scalability plays an important role in deciding the success of blockchain.
+- There are many other factors too. But these three are the most important ones.
+
+Scope of application:
+- Finance industry - Currency exchange, Mortgages, new banking infra, upgrading traditional methodologies
+- Retail industry - supply chain, loyalty program management, ecommerce
+- Insurance sector, Manufacturing industry, healthcare, governance, asset management etc.
+------------------------------------------------------------------------
+
+What is blockchain?
+- World Economic Forum: Blockchain Technology or Distributed Ledger Technology is a technological protocol that enables data to be exchanged directly between different contracting parties within a network without the need for intermediaries.
+- The network participants interact with encrypted identities anonymously.
+- Each transaction is then added to a immutable transaction chain which is then distributed to all network nodes.
+- Blockchain can be considered as a database in which data is saved as a pseudo structure called as a block. A block consists of data and hashcode.
+				+-------+
+				| Data  |
+				| #Code |	---> a block
+				+-------+
+- This block is linked  to the othe blocks using a pseudo virtual connection of the #codes, creating a chain like entity. This chain of blocks hence formed is called blockchain.
+		+-------+		+-------+		+-------+
+		| Data  |		| Data  |		| Data  |
+		| #Code |~~~~~~~| #Code |~~~~~~~| #Code |
+		+-------+		+-------+		+-------+
+- In simpler words: Consider 3 blocks A, B and C. A is the oldest and C is the latest of the blocks. These blocks are chained together using #codes. C contains # of block B and B contains # of A. This forms a blockchain of A, B and C.
+		+-------+		+-------+		+-------+
+		|   A   |		|   B   |		|   C   |
+		|       |~~~~~~~|# of A |~~~~~~~|# of B |
+		+-------+		+-------+		+-------+
+- Now consider the addition of a new block D. D will contain the # of C, thus making the addition of D smooth and the cycle continues. 
+		+-------+		+-------+		+-------+		+-------+
+		|   A   |		|   B   |		|   C   |		|   D   |
+		|       |~~~~~~~|# of A |~~~~~~~|# of B |~~~~~~~|# of C |
+		+-------+		+-------+		+-------+		+-------+
+
+What is an asset?
+- Can be defined as an item of property owned be a person or company which holds a certain valus in financial or barter aspect and is available to meet debts, commitments or legacies through means of one-way ownership transfer or an exchange for another asset from the subjected parties. (eg) When you buy a car, the car is initially the asset of the company. However, you pay some amount and do some paperwork that transfers the ownership of the car to you. The car is now your asset. The process cycle from mining the materials required to build the car to the act of handing over the car to you is called as supply chain.
+- Types of assets: 
+	> Current assets: The assets whose value can be consumed within a short period of time. These include: cash and cash equivalents, marketable securities, accounts receivablea and inventory etc.
+	> Non-Current assets: The assets that can be consumed within a wider time window. They are further divided into 2 categories:
+		> Tangible: Physical assets like property, infra, bonds etc.
+		> Intangible: Mainly assets that can involve properties covered under non-physical category. These include trademarks, copyrights and such intellectual assets, digital assets and psudofinancial assets like e-commerce related tokens.
+- Assets play an important role in blockchain as this technology plays an important role in smoothening of the process of transfer of these assets by undertaking an action called as 'Transaction by generation and validation of specific protocols defined in a contract'.
+
+What is a Ledger?
+- Throughout a supply chain, there is an exhange of assets being undertaken at every stage. This exchange of assets generates a lot of data. The data includes a variety of datasets. This data needs to be maintained in an organized, clear, valid and secure manner.
+- The ledger is a record-keeping methodology or a data maintenance system for a company's financial or non-financial data with the generated records validated by a means of a pre-authorized source.
+- The ledger reports are vital in taking decision on advancement and evolution of the company's prospective strategies.
+- Thus ledgers play a crucial role in any data management system.
+- Blockchain being a distributed ledger technology, holds a crucial amount of importance of ledgers in it implementation cycle.
