@@ -1,7 +1,7 @@
 BLOCKCHAIN:
 ~~~~~~~~~~
 
-History:
+♦ History:
 - Massive potential in present and future.
 - Satashi Nakamoto - Bitcoin: A peer to peer Electronic Cash System.
 - Block + Chain
@@ -9,25 +9,25 @@ History:
 - Encryption + Cryptography + Privacy + Time-stamp + etc. --> Evolved version of pre-existing techniques => Blockchain
 - Public + private key encryption -> foundation of Blockchain
 
-Features:
+♦ Features:
 - Distributed - due to its de-centralised characteristic. Removes the concept of central authorities like banks.
 - Permissioned - provides users with the ability to decide who in the blockchain network has the authority to validate the blocks under the transaction. This allows privacy.
 - Secure - assured by cryptography.
 
-Success factors of blockchain:
+♦ Success factors of blockchain:
 - These factors boost the success of blockchain as a technology in the market.
 	> Trust
 	> Simplicity
 	> Scalability - The energy requirements of blockchain are growing daily and this puts a limit on the scalability on the technology beyond the current stage if these energy requirements are not addressed. Thus scalability plays an important role in deciding the success of blockchain.
 - There are many other factors too. But these three are the most important ones.
 
-Scope of application:
+♦ Scope of application:
 - Finance industry - Currency exchange, Mortgages, new banking infra, upgrading traditional methodologies
 - Retail industry - supply chain, loyalty program management, ecommerce
 - Insurance sector, Manufacturing industry, healthcare, governance, asset management etc.
 ------------------------------------------------------------------------
 
-What is blockchain?
+♦ What is blockchain?
 - World Economic Forum: Blockchain Technology or Distributed Ledger Technology is a technological protocol that enables data to be exchanged directly between different contracting parties within a network without the need for intermediaries.
 - The network participants interact with encrypted identities anonymously.
 - Each transaction is then added to a immutable transaction chain which is then distributed to all network nodes.
@@ -52,7 +52,7 @@ What is blockchain?
 		|       |~~~~~~~|# of A |~~~~~~~|# of B |~~~~~~~|# of C |
 		+-------+		+-------+		+-------+		+-------+
 
-What is an asset?
+♦ What is an asset?
 - Can be defined as an item of property owned be a person or company which holds a certain valus in financial or barter aspect and is available to meet debts, commitments or legacies through means of one-way ownership transfer or an exchange for another asset from the subjected parties. (eg) When you buy a car, the car is initially the asset of the company. However, you pay some amount and do some paperwork that transfers the ownership of the car to you. The car is now your asset. The process cycle from mining the materials required to build the car to the act of handing over the car to you is called as supply chain.
 - Types of assets: 
 	> Current assets: The assets whose value can be consumed within a short period of time. These include: cash and cash equivalents, marketable securities, accounts receivablea and inventory etc.
@@ -61,9 +61,82 @@ What is an asset?
 		> Intangible: Mainly assets that can involve properties covered under non-physical category. These include trademarks, copyrights and such intellectual assets, digital assets and psudofinancial assets like e-commerce related tokens.
 - Assets play an important role in blockchain as this technology plays an important role in smoothening of the process of transfer of these assets by undertaking an action called as 'Transaction by generation and validation of specific protocols defined in a contract'.
 
-What is a Ledger?
-- Throughout a supply chain, there is an exhange of assets being undertaken at every stage. This exchange of assets generates a lot of data. The data includes a variety of datasets. This data needs to be maintained in an organized, clear, valid and secure manner.
+♦ What is a Ledger?
+- Throughout a supply chain, there is an exchange of assets being undertaken at every stage. This exchange of assets generates a lot of data. The data includes a variety of datasets. This data needs to be maintained in an organized, clear, valid and secure manner.
 - The ledger is a record-keeping methodology or a data maintenance system for a company's financial or non-financial data with the generated records validated by a means of a pre-authorized source.
 - The ledger reports are vital in taking decision on advancement and evolution of the company's prospective strategies.
 - Thus ledgers play a crucial role in any data management system.
 - Blockchain being a distributed ledger technology, holds a crucial amount of importance of ledgers in it implementation cycle.
+
+♦ What is a Transaction?
+- Transaction is basically a transfer of asset from one part to another and its commitment on the ledger depending upon the terms and protocols mentioned in the contract.
+- In this case, the ledger will be updated with the transaction. This transfer of asset is then validated in the documents or the ledger.
+
+♦ What is a contract?
+- Transfer of assets are carried out under very specific conditions. 
+- The sets of specific protocols under whose fulfillment the exchange of assets occur and the same is recorded on a ledger are called contracts.
+- A smart contract is a code segment over a blockchain. This code segment contains a set of protocols under which the parties under the action of that smart contract agree to interact with each other under predefined ground rules.
+- If and when the protocols in the smart contract are met, the agreement underway is automatically triggered and enforced.
+- The smart contracts look over the negotiation and performance of an agreement.
+- Thus contracts play a very important role as they define the guidelines under which the transfer of assets occur.
+
+♦ How is a blockchain formed using a ledger, contract and a transaction?
+- As we have seen earlier, blocks are virtually connected by a tether called #codes.
+- A block contains the dataset and the #code to its previous block. Hence we can say that, one block is a single ledger entry out of many such data entries in different blocks. 
+- These blocks are formed under specific conditions known as contracts. Once the contract conditions are satisfied, a block is formed and added to the chain of blocks, resulting in a blockchain.
+- Simpler explanation: 3 friends X, Y and Z are buying a car on the same date but with different colours. Due to the difference in the colour, the 3 cars vary in their price. Thus, the dealer will come under 3 different transactions on the same day. Separate blocks will be created for X, Y and Z as the data like owner, price and colour in all the cases are different and all these cases have different terms in the contract. Each block will have the respective data stored in itself. Now, as the purchase process begins, Y makes the first transaction and pays and gets the car. Hence an initial block of this transaction is formed and a #code is assigned to it.
+		+-------+
+		|   Y   |
+		|# of Y |
+		+-------+
+Next as Z makes the payment and completes the transaction, his block is created with the details of his asset. Now, this block has it own #code and is chained with Y's block by inserting Y's #code into Z's block.
+		+-------+								+-------+
+		|   Y   |	chain formed by inserting	|   Z   |
+		|# of Y |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|# of Z |
+		+-------+	Y's #code into Z's block.	+-------+
+Next when X makes the transaction, his block will be added to the chain by inserting Z's #code into it.
+		+-------+		+-------+		+-------+
+		|   Y   |  #Y->	|   Z   |  #Z-> |   X   |
+		|# of Y |~~~~~~~|# of Z |~~~~~~~|# of X |
+		+-------+		+-------+		+-------+
+Similarly, as future transactions happen multiple blocks are added to the chain. This forms a blockchain.
+----------------------------------------------------------
+
+♦ Why blockchain?
+- The old ledger systems had many disadvantages like:
+	> Time consuming - All system connected to a network need to undergo a process in order to update on their respective ledgers. More systems connected to the network = more time required to update the ledgers as per the data generated from undergoing a process. Consuming lot of time is disadvantageous in the modern time where a massive amount of data is generate every second with a great number of systems connected together.
+	> Efficiency - It is the ratio of what has been achieved in terms of produce or performance to what can be achieved when the resources are kept constant in both cases. The traditional ledger system consumes a lot of time and energy and it efficiency can be improved. 
+	> Expensive - Due to higher time requirement and inefficiency of the traditional ledger system, there is a higher energy and resource requirement. Thus making it expensive to implement.
+	> Vulnerable - When the systems are under the process of updating their ledgers with the newly acquired data, this time slice makes the system vulnerable to attacks and data thefts. So there is a need to develop a ledger system where security is taken care of in the perfect manner.
+- In blockchain, each node connected to a network shares a common ledger over a network of structures containing peculiar data. The structures are called blocks and the network is called blockchain. This ledger is replicated through peer-to-peer update and replication method. Explanation: The network of nodes is virtually inter-connected by a blockchain as well. The nodes in the network are synchronised parts. When the different processes in the network are undertaken one by one, the common ledger is updated for each transaction of the process. These updated over the ledger are replicated through peer-to-peer replication over connected nodes. This reduces the time of updating the ledger in every system connected to the network and also decreases the resources and energy required.
+- 4 important advantage of blockchain over the traditional ledger systems:
+	> Consensus protocols
+	> Data Provenance
+	> Ability to avoid mutation
+	> Final nature of the Blockchain
+	
+♦ What is consensus?
+- Nodes are basically the devices over the blockchain that maintain the blockchain and process the transaction if need be.
+- Consensus is an act of coming to an agreement over a transaction depending upon some predefined protocols which depend upon the nature of asset under transaction.
+- When a transaction occurs over a blockchain, the nodes form a consensus network and under predefined protocols the transaction is validated and the new block is added to the blockchain.
+- There are various ways to undertake a consensus mechanism. 2 main categories of consensus mechanism are:
+	> Consensus with mining
+	> Consensus without mining
+These mechanisms are further divided into various sub-categories like proof of work, proof of state, delegated proof of state, proof of capacity, proof of elapsed time , practical Byzanite fault tolerance etc.
+
+♦ What is data provenance?
+- Data + Provenance 
+	> Data - is a raw form or segments of information which can be processed to achieve a meaningful interpretation and result in specific information.
+	> Provenance - is a record of ownership of an asset which is used as an index of quantity or authenticity of that asset.
+- Data provenance is data maintenance method where the records of transactions over the blockchain are stored as trails of data.
+- Each action taken over the asset under the particular transaction at an instance is recorded in the form of small data segments over the blockchain. This enables easy tracking of the state of asset at any point in time during the transaction even after a long time from the creation of the block. This also helps in backtracking problems to their source or the point in time of their first occurence.
+- For each transaction a new block with current data and previous #code is generated. As a result of data provenance, it becomes very easy to track back the data to the right block using the right #key.
+
+♦ What is data immutability?
+- A property by virtue of which no mutation to a block in the the blockchain is possible. 
+- It also means that in case of any changes made to pre-existing dataset, a new block will be added instead of performing mutation in the previously created block.
+
+♦ What is data finality?
+- A property by virtue of which a single entry point is facilitated to understand the ownership of an asset after the asset has undergone a transaction. 
+- Basically helps in determining the authentic owner of an asset. 
+- A transaction record can be shown as proof of ownership for a newly bought car. This transaction record can be traced back at any stage due to provenance of blockchain ledger. It can be authenticated with the consensus validation and any tampering will be easily caught due to immutability.
