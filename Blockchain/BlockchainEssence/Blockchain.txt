@@ -140,3 +140,51 @@ These mechanisms are further divided into various sub-categories like proof of w
 - A property by virtue of which a single entry point is facilitated to understand the ownership of an asset after the asset has undergone a transaction. 
 - Basically helps in determining the authentic owner of an asset. 
 - A transaction record can be shown as proof of ownership for a newly bought car. This transaction record can be traced back at any stage due to provenance of blockchain ledger. It can be authenticated with the consensus validation and any tampering will be easily caught due to immutability.
+---------------------------------------------------------------------------------------
+
+♦ Usability of Blockchain
+- Categorizing the usability into 2 main segments:
+	> Organizational usability: The organizational usability can be explored into any industry segment, but there are specific services that blockchain has to offer which will be the foundation of blockchain as a serviceable technology. These specific services include: 
+		- Shared ledger as a service
+		- Smart contract as a service
+		- Privacy as a service
+		- Trust Factor as a service
+	> Universal Liquid usability: It specifically refers to the use of blockchain technoloy in offering digital tokens as an asset. May those tokens be initial coin offerings, security token offerings or any such offering where digital tokens are used as valuation agent in the transaction. Eg. Cryptocurrencies
+	
+♦ Blockchain vs Bitcoin
+- Blockchain - technology & Bitcoin - application
+- Blockchain is a distributed ledger technology and bitcoin is a cryptocurrency.
+- Implementation of a bitcoin: Bitcoin is basically a digital token, thus it is an asset. Before the flow of ownership of bitcoin as an asset from one individual to another, it has to pass through:
+	> Cycle of transaction
+	> Verification
+	> Validation
+	> Proof-of-work mechanism 
+	> Addition to blockchain.
+This is the flow of ownership of asset.
+
+♦ Shared ledger as a service
+- Shared ledger = Distributed ledger
+- It is called distributed because of its acquired property of being available with equal priority and parameters at every node involved in a blockchain network at the same instance of time. 
+- Explanation: Lets consider a new block F being added to a blockchain that already has the blocks A, B, C, D and E. To incorporate the addition of this new block F, a transaction is initiated. Once this transaction is completed, F comes under the specified process and all the nodes draw their conclusion over the authenticity of data in F based on the speculations made during addition of previous blocks. If these speculations prove to be right, then the block is validated by a node. 
+- The addition of a new block depends on how many nodes authenticate the transaction. The majority of nodes need to validate the transaction successfully for the new block to be added to the ledger.
+- The newly added blocks reflect onto every node without requiring every node to access a central repo for ledger data. This feature is called as shared ledger. 
+- This service adds a characteristic of decentralization to this technology.
+
+♦ Smart contract as a service
+-  Smart contracts are automatically triggered agreements between the parties undergoing a transaction for the transfer of an asset. These transactions are authenticated over blockchain.
+- These agreements can be taken peer to peer or individual to organisation or org to org.
+- A smart contract can be referred as a code segment over a blockchain. This code segment contains a set of protocols under which the parties under the action of that smart contract agree to interact with each other under predefined ground rules.
+- If and when the protocols in the smart contract are met, the agreement underway is automatically triggered and enforced.
+- The smart contracts look over the negotiation and performance of an agreement.
+- Automatic triggers can also be set for contracts to be triggered upon other validations.
+
+♦ Privacy as a service
+- Privacy on blockchain is maintained through various cryptographic and non-cryptographic methods.
+- Use of #codes and public-private keys are some of the methodologies involved in keeping the blockchain protected.
+- Properties like immutability and finality add to the security measures as they basically make the data tamperproof.
+- Though there are few disadvantages when it comes to security of blockchain which might affect on privacy, privacy over blockchain is more efficiently maintained compared to other ledger techs.
+
+♦ Trust Factor as a service
+- Trust is an integral psychological part of any deal involving contract.
+- Properties like consensus, provenance and security gaurantee the trust on blockchain.
+---------------------------------------------------------------------------------------
