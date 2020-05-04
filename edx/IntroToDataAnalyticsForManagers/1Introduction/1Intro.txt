@@ -1,0 +1,41 @@
+Intro To Data Analytics For Managers :-
+````````````````````````````````````
+
+♦ Sources of data:
+- Primary vs Secondary data
+	> Primary - data that you collect yourself
+	> Secondary - data you obtained from someone else
+- This distinction between primary and secondary data is important because, among other reasons, it accounts for data reliability.
+- Big data - 6 'V's characterise them
+	> Volume		> Veracity			> Velocity
+	> Variability	> Variety			> Value
+- Many sources, many forms => different levels of reliability. Thus acquiring, curating and managing data carefully is critical before analytics is deployed. This brings in ETL.
+
+♦ Analytics Value Escalator
+
+		^												+------------------------+
+        | 												|      Prescriptive      |
+        | 												|        Analytics       |
+        | 												|  [How do we make good  |
+        | 												| 	things to happen?]   |
+		+							   +----------------+------------------------+
+        |                              |   Predictive   |                        
+        |                              |    Analytics   |                        
+        |                              |   [What will   |                        
+        |                              |  happen next?] |                        
+		+	    		 +-------------+----------------+
+        |                |  Diagnostic |
+    ^   |                |  Analytics  |
+    |   |                | [Why did it |
+  Value |                |   happen?]  | 
+		+  +-------------+-------------+
+        |  | Descriptive |                        
+        |  |  Analytics  |                        
+        |  |    [What    |             
+        |  |  happened?] |            
+		+  +-------------+
+        | 
+		+--+-------------+-------------+----------------+------------------------+
+                           Difficuilty ->                        
+
+- These analytics boxes typically require well structured data so that you can then do the analytics directly on top. To get it into that structure we need to do some prep work which we call ETL.
