@@ -39,3 +39,8 @@ Intro To Data Analytics For Managers :-
                            Difficuilty ->                        
 
 - These analytics boxes typically require well structured data so that you can then do the analytics directly on top. To get it into that structure we need to do some prep work which we call ETL.
+
+♦ Azure ML - https://studio.azureml.net/
+- Scalable and flexible
+- Cloud based
+- Easy to use graphical interface

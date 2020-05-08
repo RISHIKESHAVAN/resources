@@ -1,0 +1,12 @@
+Descriptive Analytics:
+`````````````````````
+♦ Intro:
++--------------+--------------------+----------------+
+|              |    One quantity    | Two quantities |
++--------------+--------------------+----------------+
+| Quantitative |        Mean,       |   Correlation  |
+|   Measures   | Standard Deviation |                |
++--------------+--------------------+----------------+
+|    Visuals   |      Histogram     |  Scatter plot  |
++--------------+--------------------+----------------+
+- Understand why we need to do both quantitative measures and visuals together.
