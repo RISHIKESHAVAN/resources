@@ -1,0 +1,11 @@
+Diagnostic Analytics:
+````````````````````
+- It is about diagnosing or understanding the key drivers of observed defects in our data.
+
+♦ Chain of reasoning:
+- We will use the following concept of reasoning: If something (A) is true, then we expect to see something(effect-AA). But if something very different is observed (effect - BB), then our original belief (A) is wrong.
+- If Volkswagen is telling the truth, then we should not be seeing such high emissions. If Volkswagen is telling the truth, then the emissions should be close to the green line, the legal limit, sure with statistical variation, it might be sometimes higher sometimes lower. But we should not be seeing so much higher emissions where even with the bands of statistical variation, it's way above the green light.
+- But, our road test which have been very carefully calibrated, very carefully tested, are showing extremely high emissions. They're showing such high emissions that they are way more han we can expect to see from statistical chance.
+- So if Volkswagen is telling the truth, we should not be seeing such high emissions. But, we are seeing such high emissions. Therefore, Volkswagen must not be telling the truth.
+
+♦ Hypothesis testing:
