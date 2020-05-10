@@ -9,3 +9,98 @@ Diagnostic Analytics:
 - So if Volkswagen is telling the truth, we should not be seeing such high emissions. But, we are seeing such high emissions. Therefore, Volkswagen must not be telling the truth.
 
 ♦ Hypothesis testing:
+- It is statistical testing of claims about some population data (statistical in the sense of collecting data and performing some statistical calculations about the claims)
+- Null Hypothesis Vs Alternate Hypothesis:
+	> Null (H0): This is the default belief. And whatever difference we observe is statistical noise. Ex, Lets say the normal crime rate is 8.5. The crime rate observed during power outages is 10.325. Null hypothesis is saying that, the difference is the crime rate is just statistical noise and the rate is basically unchanged. Implying: power outages have no effect on the crime rates.
+	> Alternate (HA): This is what we are trying to prove. ie.,the observed difference is statistically significant. Ex, the difference of 10.325 from 8.5 is actually significant. Implying: there is some relation between outages and crime rates.
+- Scenario: (https://studio.azureml.net/ edxDS120x Ex3)
+	> Observed electrical outages n = 40.
+	> As of now, the normal mean=8.5, stdev=5.2. Because the standard deviation is 5.2, because the variation is so high, we would also still see variation even in locations that have electrical outages. But the question is, would we see variation of this level, where the average over the large sample size of 40 is 10.325?
+	> This brings us to a concept called the Central Limit Theorem. It says: If certain technical conditions (the sample size is large enough and that the sample is truly a random sample. The observations are independent of each other, there's no sort of biases in the sample and so on) hold, then when you take a sample of size n the average of that sample (it may vary a bit) is going to follow a normal distribution, with the same mean as the population. 
+	So now for the sample population of size 40, mean = 8.5 and the stdev = stderr = mean/sqrt(n) = 5.2/sqrt(40)  = 0.82.
+	> So hypothetically, you can think of it as if we take lots of different samples, each sample is of size 40, in our case n is 40. What I would expect is in a sample of size 40 some days crimes would be large, some days crimes would be lower. And on average the sample of size 40 would get pretty close to 8.5. There would be some cancellation because I have such a large sample, some days it's high, some days it's low. On average we'll get pretty close to 8.5. How close to 8.5? Well, the standard error is 0.82. That's what's giving you a sense of how close to 8.5 will the average in a group of 40 get to.
+	> Now coming back to our observation, we had a mean of 10.325 for n = 40. As we have already established that the mean of our data is going to be centered aroud 8.5, how likely is it to get a mean of 10.325? That can be found by computing the area under the normal curve for x = 10.325, mean = 8.5 and sd = 0.82. This gives the probability of getting more that 10.325 = 1.32%. This is called the p-value.
+	> Precisly: If the crime rate was really unchanged from the baseline, if the crime rate really is 8.5 on average, and unaffected by these electrical outages. Then the chances that in a sample of size 40, we would see 10.325 or more is only 1.32%. This 1.32% is called the p-value. So the p-value is the chances that we would observe data as extreme or more extreme than our sample data if the null hypothesis was true,
+	> So for our scenario, a chance of 1.32% is extremely unlikely. So by chain of reasoning, well, if there's only a 1.32% chance of this happening by pure chance, then I'm more likely to believe that the alternative hypothesis is true and the null hypothesis is false.
+	> How do we say 1.32% is really small? We use the Level of Significance: this gives the threshold for labeling "unlikely". Usually, we choose 5%. p-value = 1.32% < 5%. Thus we reject the null hypothesis and support the alternate hypothesis.
+	> P-values and conclusions:
+		+-------------------------------------+--------------------------------------+
+		|       [Crime rate is unchanged      |       [Crime rate > 8.5 during       |
+		| from 8.5 during electrical outages] |          electrical outages]         |
+		|                                     |                                      |
+		|          Null Hypothesis H0         |        Alternate Hypothesis HA       |
+		+-------------------------------------+--------------------------------------+
+		| If p-value >= significance level:   | If p-value < significance level:     |
+		| - Do not reject H0                  | - Reject H0                          |
+		| - No evidence to support the        | - Statistically significant          |
+		| alternative.                        | evidence to support the alternative. |
+		| - Observed data may just be         | - Observed data unlikely to be       |
+		| statistical noise.                  | statistical noise.                   |
+		+-------------------------------------+--------------------------------------+
+- Practical approach. Steps involved in it:
+	> Identify the null and alternate hypothesis.
+	> Identify what population parameters we are testing for.
+		- Is it the average of something?
+		- Is it the difference between averages?
+		- Is it the slope of some relationship?
+		- Is it the difference between proportions, the variance of some quantity, and so on.
+	In our case, it's the average nightly crime rate during electrical outage, vs the baseline.
+	> Collect a random sample, large enough (default: n>=30). Our case, n = 40.
+	> Specify the level of significance (default: 5%).
+	> Feed data into software. 
+	> Specify what kind of test this is. Our case: 	One-sample test of mean (because all we have is a one sample of data that is crime rates during electrical outages of an average finding). Also called t-test or z-test (depending on whether the population standard deviation is known or not).
+	> Obtain p-value from software.
+	> Use p-value to make conclusions.
+	> But those conclusions could be true or they could be wrong. Errors in Hypothesis testing:
+			+-----------------------+---------------------+----------------------+
+			|                       | Reality: H0 is true | Reality: H0 is false |
+			+-----------------------+---------------------+----------------------+
+			|         Reject        |     Type I error    |       No error       |
+			|  p-value < sig. level |    False positive   |                      |
+			+-----------------------+---------------------+----------------------+
+			|     Do not reject     |       No error      |     Type II error    |
+			| p-value >= sig. level |                     |    False negative    |
+			+-----------------------+---------------------+----------------------+
+	> p-hacking - caused by overtesting such that you just get a false positive that is purely coincidental / statistical noise. Thats why, we should always establish the hypothesis and then collect the data.
+- Best Practices:
+	> Formulate your hypotheses before collecting data.
+	> Support your hypotheses with resoning based on your understanding of the real world.
+	> Always be aware that statistical errors (Type I and Type II) can happen: look for things like replicating the experiment and contradictory evidence.
+	> Most importantly, ensure that your data is a large sample and is a random sample.
+	
+♦ A/B Testing: (https://studio.azureml.net/ edxDS120x Ex4)
+- It is basically the difference between two populations. There's an A and there's a B. And we're looking at the difference between the A group and the B group. And we're testing whether the difference is statistically significant or not.
+- Process:
+	> Define Null and Alternate Hypothesis.
+	> Collect random samples of data from A and B group.
+	> Use software to select appropriate test; generate p-value.
+	> Form conclusions and take actions.
+- Types of A/B tests:
+	> What quantity are we testing? Means, proportions, variances or something else?
+	> Paired or Unpaired?
+		- Paired: A paired test is test where ever data point in the A group has a partner in the B group with pretty much the main difference that one is A one is B and they are identical in pretty much every other way.
+		- Unpaired: There could be many differences between A and B sets. Even the count in both the sets could be different.
+- Practical Approach. To do:
+	> Establish test of means, unpaired, sample sizes.
+	> Set up in AzureML:
+		- SQL queries with renamed columns.
+		- Add columns to join datasets.
+		- Unpaired samples OneTailLT test.
+	> Look at p-value and conclude.
+	
+♦ Linear Regression:
+- Understanding relationships. Does X affect Y or X1, X2, X3.... affect Y.
+- Simple linear regression or single variable linear regression: where there's only one X variable and one Y. variable.
+- Steps in LR:
+	> Find a trend line, a line that captures the relationship that in some sense best fits the data. The simplest and the most common form of linear regression is called 'least squares regression' and that's what we are going to work with. And what LSR does is that it says, all right then we fit a line, well for some of those data points, there is going to be a gap between the line and the observed value. That gap is called the error for that data point. And for many data points, we have errors. For some, we have smaller. For some, we have bigger. For some, we have almost no error and so on. So we're gonna look at those errors, we're gonna square those errors because if we just add up the errors, the positive and negative errors will cancel out. We're gonna square the errors and we're going to try and find a trend line that minimizes the sum of these squared errors. This is why it is called least square regression, least because we're minimizing and squares because we're looking at the squared errors.
+	> Software can generate the trend line for us, can generate the linear regression equation for us. It is in the form of y = mx + c. Ex., WTP = 33.5 + 0.0018Income. c - intercept, where the line meets the y-axis.       m - slope = rise/run. m = 0.0018 here basically means: for a change of 1 uint in the x-axis, the y-axis value rises by 0.0018. But this is only on avg. It is only an estimation based on the dataset provided. To denote that it is only an estimate, we use y^ (a cap over the y). This is just a way of indicating that this is only an estimate, this is not necessarily reality, and this estimate could be a subject to statistical noise and so on.
+	> The next part, after we fitted our least square regression line, is to ask how good is this fit? The most common technical term that we used to try and understand how good the fit is, is what's called the R squared (R^2). Ex., R^2 = 50.1%. It's value ranges from 0% - 100%. 100% denotes a perfect fit. The formal meaning of an R squared is, it's the fraction of the squared variation in Y-axis quantity. So the fraction of the variability in the Y-axis quantity in squared terms that is explained or captured by this fitted line. Informally it's the amount of the relationship that you are explaining.
+	> Next thing we may consider is how strong is the relationship between the X and the Y. And the way we assess this is by formulating two hypotheses. H0 - X has no relationship to Y, that what you are observing is only statistical noise, that this slope is actually meaningless, it's not strong. HA - X has a statistically significant relationship with Y even after accounting for statistical noise and variation. Software will give you a p-value for this test.It's called the p-value of the slope. Then we compare it with the Level of significance.
+	> So when you do linear regression, you will get automatically R squared, p-value and this is how you use those R squared and p-values to try and understand the relationship better.
+- There's a whole bunch of other things that you need to think about with linear regression.
+	> Is the data even appropriate for linear regression? And one of the most important things to think about is if the relationship is nonlinear (concluded using scatter plots), then it's not really appropriate for linear regression.
+	> What's the margin of error on the intercept, in the slope, on our predictions?
+- Multivariate Linear Regression: where there is multiple Xs and one Y.
+
+♦ Design of Experiments:
+- Structuring your data collection process.
