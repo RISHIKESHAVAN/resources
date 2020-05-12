@@ -5,7 +5,7 @@ Predictive Analytics:
 - The quantity that you are predicting could be a continuous quantity (some number perhaps in some range) or it could be binary (just yes or no). These are just 2 broad classifications. But there are many more categories.
 - Predictions are typically about the future, but need not be always the case. Ex., Trying to predict the spam among the collection of emails.  
 - "All models are wrong, but some are useful." -- George Box.
-"All forecasts are wrong, but some are useful." Almost always all the forecasts are wrong. We can not expect to achieve the exact number the forecast gives us. But they can be made useful by adding a +/- an error interval.
+|||ly "All forecasts are wrong, but some are useful." Almost always all the forecasts are wrong. We can not expect to achieve the exact number the forecast gives us. But they can be made useful by adding a +/- an error interval.
 
 ♦ Machine Learning:
 - Techniques to learn from data for primary pupose of making predictions.
