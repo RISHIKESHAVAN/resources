@@ -1,0 +1,29 @@
+Predictive Analytics:
+````````````````````
+- You're trying to predict some stuff about the future /you're trying to make a forecast of some kind.
+- This can be done at an aggregate level or at an individual level.
+- The quantity that you are predicting could be a continuous quantity (some number perhaps in some range) or it could be binary (just yes or no). These are just 2 broad classifications. But there are many more categories.
+- Predictions are typically about the future, but need not be always the case. Ex., Trying to predict the spam among the collection of emails.  
+- "All models are wrong, but some are useful." -- George Box.
+"All forecasts are wrong, but some are useful." Almost always all the forecasts are wrong. We can not expect to achieve the exact number the forecast gives us. But they can be made useful by adding a +/- an error interval.
+
+♦ Machine Learning:
+- Techniques to learn from data for primary pupose of making predictions.
+- Variable you try to predict: Dependent variable
+  Variables used to predict the dependent var: Independent variable.
+- Supervised ML
+	> We start with a dataset where we know the actual answers.
+	> Next, we train our ML algorithm on this data.
+	> Last, we test algorithm on a different dataset to see performance.
+	> If there is only one dataset, then split it into training and test dataset.
+- Unsupervised ML
+	> We do not know the actual answers, but let algorithms suggest answers.
+	> Let algorithm analyse the data and suggest the groups for us.
+	> There is no right answer, but the effectiveness of the algorithm at the end will matter.
+	
+♦ Experiment: (https://studio.azureml.net/ edxDS120x Ex5)
+
+♦ Othe ML methods:
+- K nearest neighbour: Takes decision according to the majority among the k number of nearest neighbours (training data points) that are similar to the chracteristics of the test data.
+- Logistic regression: fits a trend line.
+- Neural Networks: Very flexible but may take lot of data to train.
