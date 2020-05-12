@@ -1,0 +1,32 @@
+Descriptive Analytics:
+`````````````````````
+♦ Intro:
++--------------+--------------------+----------------+
+|              |    One quantity    | Two quantities |
++--------------+--------------------+----------------+
+| Quantitative |        Mean,       |   Correlation  |
+|   Measures   | Standard Deviation |                |
++--------------+--------------------+----------------+
+|    Visuals   |      Histogram     |  Scatter plot  |
++--------------+--------------------+----------------+
+- Understand why we need to do both quantitative measures and visuals together.
+
+♦ Describing One quantity (https://studio.azureml.net/ - edxDS120x Ex2)
+- Mean (Avg) and SD play an important role. But just the quantitative measures without the visuals would not help much as we would never know what trend the data follows eg. a bell curve, bi-modal distribution, exponential distribution etc.
+- Mean - avg of the data
+- SD - avg spread of the data. Which is given by, root-mean-square average. 
+- Importance of the normal distribution.
+
+♦ Describing Two quantities (https://studio.azureml.net/ - edxDS120x Ex2)
+- Scatter plot. Things to look for in it:
+	> Direction - Increasing? Decreasing? Neither? Both?
+	> Shape - Linear? U-shaped? Cyclical?
+	> Strength - How tight is the relationship?
+- Correlation coefficient:
+	> Measures strength of only 'linear' relationships.
+	> Denoted by Greek letter rho (usually denotes the population cc) or 'r' (usually denotes the sample cc). Most often we work with samples, so we use r.
+	> Number between -1 and +1. 0 - could mean a non-linear relationship or no relationship.
+	> Sign indicates direction; Magnitude indicates tightness (1 - very tight).
+	> Slope is not related to CC.
+	> Correlation does not imply causation.
+	> Correlation only measures relationship between 2 quantities.

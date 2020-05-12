@@ -1,0 +1,9 @@
+♦ ETL:
+- Simplest form of data is a 'Table'.
+- More commonly, data will be present in an organizational database.
+- APIs - Most common, useful and easy way for pulling data from other sources.
+- SQL plays a major role in ETL since it helps in handling data in most of the required ways. SQL activitires carried out are here: https://studio.azureml.net/
+- Other actions that can/need to be taken for ETL are:
+	> Add new calculations and create new columns.
+	> Need to deal with missing data. Simply removing missing data could be problematic. Check integrity, fix errors etc.
+	> Social media data - Extract metadata. Parse and process text. Extract info from images and videos etc.

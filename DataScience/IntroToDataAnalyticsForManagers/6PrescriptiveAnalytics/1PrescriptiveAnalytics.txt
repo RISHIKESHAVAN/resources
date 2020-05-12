@@ -1,0 +1,16 @@
+Prescriptive Analytics and Artificial Intelligence:
+``````````````````````````````````````````````````
+♦ Prescriptive Analytics:
+- It's about building upon what we've learned from our data to prescribe, or guide our actions for the future.
+-Optimisation model: Any optimization model has three elements: 
+	> Decision variables - decision variable are variables which are basically quantities. Quantities that you are trying to decide.
+	> Goal - What is our target? Incase of maximising revenue: (Quantity Q * Price P) would give the revenue. So we need to maximise this expression.
+	> Constraints: Many real world factors act as constraints. Ex., you cannot sell more Q than what is at demand at the given P. Also production capacity constraints.
+- Simulation: It's the idea that we can create a computer model of a real system. And then, make changes on a computer model to see the impact of our decisions. Simulate the real time scenario and then do the what-if analysis.
+
+♦ AI in Business.
+- Exploration and Exploitation tradeoff: If we explore too much, we are wasting time on useless activities. But if we we explore too little, in other words if we exploit too much, we risk missing out on new strategies, new trends, or even changing business conditions. So, how much time should you spend exploring, and how much time should you spend exploiting? This technical sort of concept of exploration and exploitation in the applied math field is called the multi-armed bandit problem.
+
+♦ Risks and dangers:
+- Follow the noise instead of the data.
+- Inherited bias from past data.
