@@ -9,3 +9,6 @@ The content of this module is based on the [Python for Data Science (PY0101EN)](
 * The purpose of having functions in Python.
 * How to operate on files to read and write data in Python.
 * How to use pandas, a must have package for anyone attempting data analysis in Python.
+
+## Note:
+Each module has the lab content from IBM on Github gists. The details of the respective gists are provided inside each module.
