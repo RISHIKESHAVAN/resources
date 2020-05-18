@@ -1,2 +1,2 @@
-The contents of this directory are from the course - 'What is Data Science?' by IBM on Coursera
-Link to the course - https://www.coursera.org/learn/what-is-datascience/home/welcome
+# What is Data Science?
+The content of this module is based on the [What is Data Science?](https://www.coursera.org/learn/what-is-datascience/home/welcome) course on Coursera by IBM.

@@ -11,4 +11,4 @@ The content of this module is based on the [Python for Data Science (PY0101EN)](
 * How to use pandas, a must have package for anyone attempting data analysis in Python.
 
 ## Note:
-Each module has the lab content from IBM on Github gists. The details of the respective gists are provided inside each module.
+Each module has the lab content from IBM on Github Gists. The details of the respective gists are provided inside each module.
