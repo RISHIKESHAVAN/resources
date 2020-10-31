@@ -1,0 +1,215 @@
+##### TABLEAU CA CERTIFICATION #####
+
+>> Measures Vs. Dimensions
+- Measures are always aggregated to the current level of detail.
+- Dimensions increase the segmentation/detail of the view.
+
+>> Discrete Vs. Continuous
+- Blue Pills = Discrete -> shown as Headers
+- Green Pills = Continuous -> shown as Axis
+- Usually, dimensions are discrete and measures are continuous. But that property can be changed, consequently changing them to an header/axis
+- Changing from discrete to continuous or vice versa has many effects on how that particular data is viewed. Ex., the colour applied to it etc. Discrete - Categorical colour pallete. Contonuous - Continuous colour range
+
+>> Tableau Generated Fields
+- The TGF are Italicised in the view. 
+- table_name(Count): Gives the count of rows in the table. We can segment this using a dimension, resulting in the number of 
+rows in each dimension.
+- Measure Names: Collection of all the measure names in a single field.
+- Measure Values: All the measures in a single field.
+- MN and MV are used to create view with multiple measures.
+
+>> Histograms
+- For the measure for which the histogram is created, a dimension measure_name(bin) will be created where we can edit the bin size and other factors of the histogram.
+
+>> Bullet graphs
+- To compare 2 measures. Ex., If sales are meeting the expectations.
+- Steps: 1) Create the variable to represent the "expectations". This is done by creating a Calculated Field. 2) Once that is created, double click on the expectations variable and the variable to be compared. 3) Select Bullet Graphs from 'Show Me'
+
+>> Bar Charts
+- Show how a Measure varies by one or more dimension
+
+>> Line and Area Charts
+- Line and area charts can be used to show how a measure varies over time.
+- Adding a Dimension to the colors in the Marks will create the Area maps with one Measure in the view.
+
+>> Combined Axis & Dual Axis Charts
+- In the Dual Axis view, dragging one of the measures from the Rows field to the axis itself will convert it to a Combined Axis chart.
+
+>> Bar in Bar charts:
+- Steps: 1) Create a bar chart using 2 measures. 2) Drag "Measure Names" pill to Colour on the Marks card. 3) Analysis > Stacked Marks > Off 4) Drag "Measure Names" to Size on the Marks card.
+
+>> Box and Whisker Plot
+- The upper whisker is usually at 1.5 Inter Quartile Range. But when we set that value, Tableau actually sets the Upper Whisker at the "largest value that is no greater than the third quartile plus 1.5 times the inter quartile range"
+- Note that Box plots can also be done using 1 Measure and 1 aggregate. In this case, the dimension should be dragged to Detail Mark.
+
+>> Mapping
+- In the data file, check if the location fields are clubbed together, ex. the City name and the State name could be on one field. In that case, split the into two different columns.
+- Add geographic roles to the necessary fields.
+- Map > Edit locations
+- To deal with ambiguous locations, check if the state and country are correctly provided.
+- Map > Map layers help in customising the map.
+- Ctrl + Select the different territories, right-click > Group to create custom territories. Grouping the territories will colour them.
+- Lasso and Radial selection tools
+
+>> Importing and Managing custom Geocoding - Not available in Tableau Public
+- Geocoding: Converting a location description to lattitude and longitude.
+- Steps: 1) Get the Lat and Long data of the required addresses from net. 2) After importing the non geocoded data into the view, select Map > Geocoding > Import Custom Geocoding. Follow the steps here - https://help.tableau.com/current/pro/desktop/en-us/custom_geocoding.htm
+
+>> Blending Geographic data:
+- Another way to give Tableau the Geocode data.
+- Steps: 1) Store the Lat and Long data in a separate csv file. 2) Import the file as a separate data source from the actual data. 3) Now in the View window, we will see 2 datasources on the top left. 4) You need to create a relationship between the 2 data sources. To do that, in the Dimensions or Measures, click on the paper clip icon next to the field that will connect the 2 data sources. 5) Then Show Me > Map plot
+
+>> Using a Background Image Map
+- Steps: 1) First create a Map plot with your data. 2) Go to a site where you can get a map image Ex. OpenStreeMap.org 3) Select the view you want and export the Lat and Long of the view. Also download the view as an image. 4) Map > Background Images > Orders > Add Image. After selecting the image, fill in the Lat and Long values: Left = West; Right = East; Bottom = South; Top = North. 5) After this, go to Map > Background Maps > None to remove the Default image that Tableau is using. 6) The plot would appear as a Scatter Plot. Right click on the Axes > Edit Axis > Fixed > Enter the Lat and Long values in the respective Axes.
+
+>> Connecting to Spatial files:
+- They are special files containing Geographic Data.
+- Get file from net. Import and select Geometry. A special function "Collect" will be applied to Geometry.
+
+>> Sorting:
+- Generally sorts by the overall row total. 
+- Custom sort is also possible by right-clicking on Columns or Rows. We can sort by - Data source order, Alphabetic, Field, Manual & Nested.
+- Non-nested sort sorts the segment in the same way for all panes. Whereas, nested sort will determing the individual order for each pane.
+
+>> Filters:
+- Show filter option.
+- Show relevant values/All values in database.
+
+>> Groups, Sets and Hierarchies:
+- Individually select the dimension or measures > right-click > Hierarchy > Create Hierarchy.
+- We can group fields in the View or by right clicking on the Dimension and Create Group
+- Sets: for creating Top 10, Top 5 lists. Right click on Dimension > Create > Set
+
+>> Sets with Context filters
+- Consider the scenario: You want to list the top 10 most profitable customers.
+- Steps: 1) You create a set to list the top 10 most profitable customers. 2) Add the Customer and Profits field to the view. 3) Add the created set to the filter. It will show the top 10 customers and their profits. 4) Now when you add Regions to the filter and select one region, it displays only the customers in the selected region from the top 10 and not the top 10 from the selected region.
+- This is because of the order of execution in Tableau. This can be resolved by righ-clicking on Regions filter > Add to context. Now, selecting the region in the filer would display the top 10 in that region.
+
+### Calculations
+>> Aggregate Calculations: Sum & Average
+- Agg Calcs. give a single value for whatever detail we have in the view.
+- Avg IGNORES null / blank values. ie, Avg of 5 rows with 1 null row in them = (Sum of rows)/4 => this feature is similar to Excel
+
+>> Calculated field
+- Analysis > Create Calculated Field (or) right-click on the Data pane on the left > Create Calculated Field
+- This brings up a dialog box that allows you to create calculated fields. The right side of the dialog box contains the various functions that can be used. 
+- If a field is created using an aggregate calculation, then no other aggregation is possible on top of it. When that field is added to the View, the letters AGG appear in the front.
+
+>> Ratio Calculations: To find the ratio of Profits/Sales
+- The right approach: Sum of row data of Profits / Sum of row data of Sales
+- The wrong approach: Ratio of Profits/Sales for each row and then Average of them.
+
+>> COUNTD function
+- When you segment your data, the COUNTD function is acting within that segment. Ex, When you get the unique customer id, and then add the dimension Order Date to the View, the function COUNTD is implemented within each year resulting in the same customer getting counted in each individual year since the customer is distinct in each of those.
+
+>> Date Calculations
+
+>> IF conditions
+
+>> String functions
+- CONTAINS(string, substring)
+- LEFT(string, number of chars)
+
+>> Quick Table Calculations
+- It is a calculation done on the data that is already in your View, rather than the underlying data.
+- With the percent 	of total table calculation, we can compare the value in the current cell of our View, to a total of sub-total in the table. The Compute All Using option lets us to choose the denominator for the table calculation.
+- At higher levels of details, Compute Using > Pane Down: will give the calculations for each Pane(the top level dimension). Compute Using > Table: Will give calculations across the entire table.
+
+>> More Calculations: Rank, Running Total, Moving Average
+- Rank : Ranks the rows as 1, 2, 3.... based on the aggregate.
+- Running Total: Add the value in the current cell and all the values in the previous cells. Table Down: Goes on for all all the rows in the table. Pane Down: Restarts in each pane.
+- Moving Average: Takes average of couple of values before and after the current cell and the current cell. We can control the cells it is taking into consideration. Right click on Measure Values on the left > Edit Table Calculations to change the cells.
+
+>> Totals and Subtotals:
+- Analysis > Total > (Various  Options)
+- Analysis > Total > Total All Using : Used to control what value is calculated.
+
+### Level of Detail Expressions
+- A LoD expresion is created via the same Create > Calculated field. But it, functions on the basis of a dimension rather than just measures.
+
+>> Fixed
+- Funcitonally, it is similar to forEach().
+- {FIXED [Product Category] : SUM([Sales])} - This gives the sum of Sales for each Product Category, regardless of what dimensions are in the view. Meaning: once this LoD calculation is added to the view, the values for this dsplayed in the view would remain the same no matter how many dimensions are added or removed from the view. 
+- Order of Operations is very important when LoD calculations are involved. Ex., you create a LoD calc: {FIXED [Customer Id] : MIN(YEAR(Order Date))} - this gives the first order year for each customers. Then, we add the Sales to the View and then add an Order Date filter to find the Sales for only the year 2013. Now, when we add the LoD calc to the view as a Dimension, it segments the sales of 2013 into the contributions made by the customers with the various first order years. BUT, since we have the Order Date filter as 2013, why didnt the LoD Calc also get filtered out to give only the Customers whose first order year was 2013? This is because, FIXED LoD Calculations precede Dimensional Filters in Tableau's Order of Operations.
+- FIXED is also used to calculate the percent of total.
+
+### Data Connections
+>> Datasource Page
+- Left Pane, Canvas, Data grid
+- Top Right corner - to add Datasource filters. Filters the data in the Datasource itself and the result will be shown in the Data grid.
+- Hide columns. Show hidden fields checkbox.
+- Can have aliases for values. Show Aliases checkbox.
+- When multiple tables are present in the Canvas, the order of fields in the Data Grid can be sorted using the Sort Fields option.	
+
+>> Connecting to Tableau Server
+- Superstore Datasource is created automatically when we first create a Tableau Server.
+- We can Create a Local Copy of the datasource as a .tdsx file. This a packaged datasource that contains all the information to use the datasource locally.
+- To push a new local datasource to Server, import the datasource and a table must be added to the canvas. Then Sheet > Server > Select Datasource
+- Your server URL is specific to you and it opens up in a browser. You can browse all that you have stored in the server.
+
+>> Joins
+- A Join combines the data and then aggregates them.
+- To combine multiple tables.
+- By default, the Canvas shows the Logical layer (where we can do Relationships). We need to shift to the Physical layer to do Joins. Double click on the current table in the Canvas to open the Physical layer.
+- Drag and drop the second table on to the Physical layer away from the first table. This creates a Venn Diagram, with the default Inner Join. Clicking on the  Venn allows us to change the Join. Venn Diagram = Joins
+- Inner Join: Includes only values of a particular field which matches in both tables.
+- Left Join: Includes all values from left table and all matches of a particular field from the right table. Members without matches will show up as nulls on the right.
+- Right Join: Includes all values from right table and all matches of a particular field from the left table. Members without matches will show up as nulls on the left.
+- Outer Join: Includes all values from both tables. Members without matches show up as null.
+
+>> Duplication in Joins
+- While using Joins, you can end up with more rows than you started with. It is a good thing / bad thing depending on the context. Ex., Multiple purchases means multiple payments, so duplication is good. But a daily sales target represents the total sales target for the entire day regard;ess of how many purchases are made. So duplication in this case is bad.
+
+>> Blending 
+(https://help.tableau.com/current/pro/desktop/en-us/multiple_connections.htm) *Very Important*
+- A Blend aggregates and then combines the data(meaning, it aggregates the data from different datasource and then links them). Therefore there is no duplication.
+- Blend is not a single datasource. Joins create a single datasource that Tableau uses but Blend is actually Blending 2 different datasources. If you want to Blend 2 tables from the same Excel, then you can add the same file as 2 different datasources and select the different tables from the files. Then, in the Sheet at top left you will find the 2 datasources (or tables) added.
+- Data (next to File) > Edit Blend Relationships > select the Primary and Secondary datasources and the linking field
+- Data from the Primary Datasource is always included in the View, but data from the Secondary datasource is only included when there is atleast one row that matches on the linking field.
+
+>> Relationships
+- Joins introduce duplication when the tables have different levels of granularity. Blends remove the duplication but they have a disadvantage that they drop data when it is present only in the secondary table and not in the primary table.
+- Relationships don't introduce any duplication and like an outer join, all of the data can be included in the View even when there is no match between the tables. Basically there is no concept of Primary and Secondary datasource in Relationship.
+- Relationships are done on the Logical layer of the Canvas and don't require multiple datasources. You can join table A & B in the Physical layer and then create a relationship b/w A-B and C in the Logical layer.
+- Unlike Joins, Relationships do not allow calculations to combine 2 tables.
+
+>> Unions
+- Joins, Blends and Relationships combine fields(columns) from different tables. Unions are a way to add rows from one table to the rows from another table.
+- Once Union is done, the Data Grid has 2 new columns - Sheet & Table Name - to specify the table that the rows belong to.
+- To Merge values from 2 columns > Select them > Right Click > Merge Mismatched Fields
+- Right Click on the Tables in the Canvas > Edit Union > Wildcard - If you will always work with multiple tables that need to be Union-ed, then you can set this settings so that it will always search for the files in the folder and Union them.
+
+>> Migrated Data
+- While opening an old workbook in the 2020.2 version, it will upgrade it to the latest version and the datasource will also be migrated and the Data pane in the sheet will look different.
+
+>> Data Interpreter, Pivoting and Automatic & Custom Split
+
+>> Extracts - Available only on Professional version
+(https://help.tableau.com/current/pro/desktop/en-us/extracting_data.htm)
+- Extracts are saved subsets of data that you can use to improve performance or to take advantage of Tableau functionality not available or supported in your original data.
+- Options to create and edit Extracts are available on the Canvas after you add your tables. 
+- Logical Table - store one extract table per logical table. Physical Table - one extract table per physical table. Logical table option is preferred.
+- Extract Filters can be configured.
+- When you create an Extract, the file is first saved with an ".hyper" extension (previously it was ".tde"). Now in the Sheet you will have only the extract data to work with because, when you right click on the Datasource at the top left, the "Use Extract" option will be selected by default. Once you uncheck the selection, all the data in the Datasource will be shown.
+- In the absence of an Extract, after adding a couple of Dimensions and Measures to the View, Right click on the Datasource > Extract Data > Check "Aggregate data from visible dimensions" > Select "Hide all Unused Fields" > Extract - This will retain only the Dimensions and Measures that are currently in the View and hide everything else. This extract is an aggregated summary rather than the underlying data.
+- Extract dialog box > Sample - To select the number of values arbitarily
+- Extract dialog box > Top - To select the specific number of values from the top
+- Right click on the Datasource > Extract > Compute Calculations Now > To add the existing calculations in the View to the Extract so that the value will be pre calculated and stored in the Extract file.
+
+>> Performance considerations for Blends, Joins and Cross-Database Joins
+- All else being equal, in-database joins are faster. (i.e.) A join is faster than a blend and joining 2 tables in the same database will be faster than a cross-database join of 2 tables of the same size
+
+### Dashboards
+- They allow you to combine multiple Worksheets in a single View.
+- On the Dashboard, right click on any of the added Worksheet > use as filter - this will enable that particular Worksheet as the filter for all the other.
+- Order of Execution will play an important role 
+
+### Trend Lines
+- Create a scatter plot. Then Analytics pane > Trend line > Drag and drop it on any one of types appearing on the View: Linear, Log, Exponential & Polynomial. 
+- Right click on the trend line to edit the properties of it.
+- Righ click on the trend line > Describe Trend Model - This will give more details on the Line. 
+- P-Values can be found on the Describe Trend Model
+
+### Forecasting
+- Using what has happened in the past to predict what will happen
+- 

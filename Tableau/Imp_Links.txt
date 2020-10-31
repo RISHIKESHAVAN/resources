@@ -1,0 +1,24 @@
+Dimensions & Measures, Continuous & Discrete - https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm
+Table count - https://help.tableau.com/current/pro/desktop/en-us/datasource_datamodel_whatschanged.htm#using-a-tables-count-field-instead-of-number-of-records
+Measure Name and Values - https://help.tableau.com/current/pro/desktop/en-us/datafields_understanddatawindow_meavalues.htm
+Bullet Graphs - https://help.tableau.com/current/pro/desktop/en-us/qs_bullet_graphs.htm
+Quartiles - https://www.mathsisfun.com/data/quartiles.html
+Format Titles, Captions, Tooltips, and Legends - https://help.tableau.com/current/pro/desktop/en-us/formatting_specific_titlecaption.htm
+Annotations - https://help.tableau.com/current/pro/desktop/en-us/annotations_annotations_add.htm
+Mark Labels - https://help.tableau.com/current/pro/desktop/en-us/annotations_marklabels_showhideworksheet.htm
+Ambiguous Locations - https://help.tableau.com/current/pro/desktop/en-us/maps_editlocation.htm#edit-ambiguous-locations
+Zoom and Pan Views, and Select Marks - https://help.tableau.com/current/pro/desktop/en-gb/inspectdata_pan_zoom.htm
+Custom Territories - https://help.tableau.com/current/pro/desktop/en-gb/maps_custom_territories.htm
+Map Layers - https://help.tableau.com/current/pro/desktop/en-us/maps_options.htm
+Geo Search - https://help.tableau.com/current/pro/desktop/en-us/maps_mapsearch.htm
+Custom Geocoding - https://help.tableau.com/current/pro/desktop/en-us/custom_geocoding.htm
+Blend data - https://help.tableau.com/current/pro/desktop/en-us/maps_customgeocode_ex_datablend.htm
+Data Blending vs. Custom Geocoding - https://help.tableau.com/current/pro/desktop/en-us/maps_customgeocode_datablend.htm
+BG image Map - https://help.tableau.com/current/pro/desktop/en-us/bkimages_maps.htm
+Sorting - https://help.tableau.com/current/pro/desktop/en-us/sortgroup_sorting_computed_howto.htm
+Filters - https://help.tableau.com/v2018.2/pro/desktop/en-us/filtering.html
+Tableau order of operations - https://help.tableau.com/current/pro/desktop/en-us/order_of_operations.htm
+Bookshop Data - https://help.tableau.com/current/pro/desktop/en-us/bookshop_data.htm
+Live conn Vs. Extracts - https://help.tableau.com/current/guides/everybody-install/en-us/everybody_admin_data.htm#tradeoffs-live-connection-and-extract
+Vis Guidebook - https://www.tableau.com/sites/default/files/media/whitepaper_visual-analysis-guidebook_0.pdf
+File types - https://help.tableau.com/current/pro/desktop/en-us/environ_filesandfolders.htm

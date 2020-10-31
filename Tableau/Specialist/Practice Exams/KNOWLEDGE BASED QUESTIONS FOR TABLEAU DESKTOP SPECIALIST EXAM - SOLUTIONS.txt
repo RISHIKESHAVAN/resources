@@ -1,0 +1,504 @@
+######## KNOWLEDGE BASED QUESTIONS FOR TABLEAU DESKTOP SPECIALIST EXAM - SOLUTIONS ########
+
+1. Which of the following should be used if, for security purposes, you’d like users to enter their database credentials in order to access the workbook: 
+a. Live connection
+b. Extract
+c. Hyper
+d. Packaged data source
+Correct answer is A – “If your organization enforces user-level permissions to databases, use a live connection for workbooks that connect to those databases. That way, users who interact with workbooks and data sources that require authentication will be prompted for credentials.” https://onlinehelp.tableau.com/current/guides/everybody-install/en-us/everybody_admin_data.htm#tradeoffs-live-connection-and-extract
+
+
+2. Which feature will allow you to show more relevant or descriptive dimension values in your view than what the original data provides?
+a. field renaming
+b. hierarchy 
+c. alias
+d. group
+Correct answer is C – “Aliasing is the alternative name that you can assign to a value in a dimension field. You can use aliases to rename specific values within a dimension. This can be useful when you want to show more relevant or descriptive dimension values in your view than what the original data provides.” https://onlinehelp.tableau.com/current/pro/desktop/en-us/multipleconnections_edit_primary_aliases.htm
+
+
+3. Which of the following is not a default property which can be set for a measure?
+a. Number Format
+b. Color
+c. Aggregation 
+d. Sort
+Correct answer is D – Sort is a default property for dimensions but not for measures.
+
+
+4. This type of join will include all values from the left table:
+a. Inner
+b. Right 
+c. Left
+d. Blend
+Correct answer is C – A left join will include all values from the left table.
+https://onlinehelp.tableau.com/current/pro/desktop/en-us/joining_tables.htm#jointypes
+
+
+5. Your data has a column which should be treated as a date, but when you change the data type to date you see a lot of null values or obviously incorrect dates like 12/30/1899. What can you do next since the date conversion did not work?
+a. Edit your computer’s date settings to that they correspond to the format of the date you’re trying to use in Tableau
+b. Instead of setting the field to Date, set to Date & Time 
+c. Set the type back to string, then try date conversion functions like DateParse and Date
+d. Switch the metadata grid, then right click the field and select “date format settings”
+Correct answer is C – If changing type to date doesn’t work, you should change the data type back to string and use a date parse function https://onlinehelp.tableau.com/current/pro/desktop/en-us/data_dateparse.htm
+
+
+6. You want to create a dual axis chart showing the monthly average “Open” and “Close” values for a stock. The y-axis shows the opening stock price and the x-axis shows the date. What steps should you take?
+a. Drag and drop the field “Close” to the x-axis.
+b. Drag and drop the field “Close” to the y-axis.
+c. Drag the field “Close” to the path mark. 
+d. Drag the field “Close” to the row shelf, then select dual lines on the show me menu.
+Correct answer is D – https://kb.tableau.com/articles/howto/dual-axis-bar-chart-multiple-measures Answer B is not correct because dragging Result to the y-axis will give you a chart with two lines, but not a dual axis chart.
+
+
+7. You would like the person using your dashboard to select the year, and based on the year to adjust the interest rate in some related calculated fields. You will like the year selection to limit the data in the view. What Tableau element should you to let the user select the interest rate?
+a. Dimension Filter
+b. Context Filter 
+c. Parameter
+d. Change Set values Dashboard Action
+Correct answer is C - A parameter will allow the user to set a value which you can then use in a calculated field. You can also use a parameter in a calculation, and then use that calculated field in a filter to limit the data in the view.
+
+
+8. Which type of visualization is not typically effective in showing change over time?
+a. Bar Chart
+b. Line Chart
+c. Area Chart 
+d. Scatter Plot
+Correct answer is D - According to the tableau visual analysis guidebook, “Some of the best visualizations for showing trends over time are line charts, area charts, and bar charts.” A scatter plot does not show change over time as effectively. See the visual analysis guidebook https://www.tableau.com/learn/whitepapers/tableau-visual-guidebook.
+
+
+9. Which types of plots are most often used to visualize the distribution of a single continuous measure? (select all that apply)
+a. Scatter Plot
+b. Tree Maps
+c. Box Plot 
+d. Histogram
+Correct answer is C & D - The box plot and histogram visualize the distribution of a continuous measure.
+“A histogram is a chart that displays the shape of a distribution. A histogram looks like a bar chart but groups values for a continuous measure into ranges, or bins.” https://onlinehelp.tableau.com/current/pro/desktop/en-gb/buildexamples_histogram.htm
+“Use box plots, also known as box-and-whisker plots, to show the distribution of values along an axis.” https://onlinehelp.tableau.com/current/pro/desktop/en-us/buildexamples_boxplot.htm
+Scatter plots are used to understand the relationship between two or more variables rather than a single measure.
+
+
+10. A bullet chart combines a bar chart with:
+a. Scatter plot
+b. Filled bubbles 
+c. Reference lines
+d. Circle views
+Correct answer is C – a bullet chart combines a bar chart with a reference line
+
+
+11. Which of the following will result in an error
+a. A calculation that includes more than one aggregation 
+b. Aggregation on a field that is already aggregated
+c. A table calculation on a field that is already aggregated
+d. An aggregation on a level of detail expression
+Correct answer is B - If you try to aggregate an aggregated field, you will get the error message saying that an aggregate cannot be further aggregated.
+
+
+12. Which type of filter usually works best with date fields? 
+a. Slider filters
+b. List filters
+c. Checkboxes
+d. Text search
+Correct answer is A – The Visual Analysis Best Practices explains, “Remember that slider filters are great for date and numerical values—while list filters are better for categorical data.”
+
+
+13. A relative date filter works relative to:
+a. A parameter or field you select when creating the filter 
+b. The anchor date
+c. The data the workbook was created or updated
+d. The current date when the workbook is viewed
+Correct answer is B – Relative date filters work relative to the anchor date. By default this will be the current date, but this can be changed:If you keep the default option, “Anchor relative to Today” then the relative date will work relative to the date when the workbook is viewed (answer D) but this can be changed. Documentation on relative dates: https://onlinehelp.tableau.com/current/pro/desktop/en-us/qs_relative_dates.htm
+
+
+14. Which of the following is true? 
+a. A dashboard cannot include a story, but a story can include a dashboard
+b. A dashboard can include a story, but a story cannot include a dashboard
+c. A dashboard can include a story, and a story can include a dashboard
+d. A dashboard cannot include a story, and a story cannot include a dashboard
+Correct answer is A
+
+
+15. Which of the following will create a dashboard action? 
+a. Click the “More Options” arrow on the worksheet included in the dashboard layout, then select “use as filter”
+b. Click the “More Options” arrow on the worksheet included in the dashboard layout, then select “Filter” and the field you wish to use in the filter action
+c. Right-click on a header value shown in the worksheet in the dashboard layout and select “exclude” or “keep only”
+d. Click the “More Options” arrow on the worksheet included in the dashboard layout, then select “action,” add action, and Filter
+Correct answer is A - B will add a quick filter to the dashboard, but not a filter action. C will create a context filter, not a filter action. C will filter the current worksheet, but will not create a dashboard action. D is not the right choice because there is no action option in the “More Options” menu.
+
+
+16. Which of the following mark types cannot be adjusted using the Size slider?
+a. Line
+b. Pie
+c. Bar 
+d. Area
+Correct answer is D - The Size of Marks button is disabled when the marks type is Area: https://onlinehelp.tableau.com/current/pro/desktop/en-us/viewparts_marks_markproperties.htm#SizeProp
+
+
+17. How would you change the font color of the tooltip? (Select all that apply)
+a. Click on “color” in the marks area, select “tooltip” in the dropdown, and select the desired color.
+b. Right-click on the view, select “Format” and select the dropdown next to tooltip. Then select the color. 
+c. Click on the tooltip button in the Marks area, highlight the text, and select the desired color using the dropdown
+d. Right-click on the view, select “Format” and you will see several tabs in the formatting menu – “Sheets,” “Rows,” Columns” and “Tooltip.” Select the tootip tab and then use the formatting menu to select the color.
+Correct answer is B & C - The color button in the marks area will not show you a tooltip option, and there is no tooltip tab in the format menu.
+
+
+18. Which of the following action types can be used to create proportional brushing?
+a. URL Action
+b. Filter Action 
+c. Set Action
+d. Sheet Action
+Correct answer is C. See https://onlinehelp.tableau.com/current/pro/desktop/en-us/actions_sets.htm#Examples and https://www.tableau.com/about/blog/2018/8/how-do-proportional-highlighting-set-actions-latest-tableau-beta-92168 for a demonstration of how a set action can use used to achieve proportional brushing.
+
+
+
+19. Which of the following describes the Measure Names field (select all that apply)
+a. It is a Measure automatically created by Tableau 
+b. When you create a view with multiple measures on a single continuous axis, Tableau will automatically add Measure Names to the view. 
+c. When you add Measure Names to a view, all of the measure names appear as row or column headers in the view. The headers include each measure name. This feature becomes useful when you are working with a text table that shows multiple measures.
+d. Measure Names is a system generated field that contains the names of all the measures in your Tableau workbook, including the system generated measures such as Latitude and Longitude.
+Correct answer is B & C - A is incorrect because Measure Name is a Dimension, not a value. D is incorrect because Measure Names does not include Latitude and Longitude. Explanation of Measure Names - https://onlinehelp.tableau.com/current/pro/desktop/en-us/datafields_understanddatawindow_meavalues.htm#AboutMN
+
+
+20. You add two fields to your Tableau view, “Profit” and “Average Profit.” When you add Profit to the view, you see a pill with the label, “SUM(Profit)” but when you add Average Profit to the view, you see a pill with the label, “AGG(Average Profit).” Why does one field have SUM and another AGG?
+a. Each field has default properties, including default aggregation. Profit had SUM set as its default aggregation, while Average Profit had AGG set as its default.
+b. AGG is applied by default to discrete fields, while SUM is applied to continuous fields. Average Profit was set to discrete, while Profit was set to continuous.
+c. AGG is applied by default to dimensions, while SUM is applied to measures. Average Profit is a dimension, while Profit is a measure. 
+d. AGG indicates that the “Average Profit” already includes some type of aggregation. “Profit” does not include aggregation, so an aggregate function is applied when the field is added to the view.
+Correct answer is D - When a calculated field which already includes aggregation is added to a view with aggregated measures, AGG indicates that the field already includes aggregation. Measures without aggregation will be aggregated when they are added to the view.
+
+
+21. Which of the following field types will create a color palette?
+a. Measure
+b. Dimension
+c. Continuous 
+d. Discrete
+Correct answer is D - A continuous field will create a color gradient, while a discrete field will create a color palette.
+https://onlinehelp.tableau.com/current/pro/desktop/en-us/viewparts_marks_markproperties_color.htm#Categorical_Palettes
+
+
+22. Examine the following view and describe the most likely field type for Order Priority and Sum(Sales)
+a. Order Priority is a discrete measure, and Sum(Sales) is a discrete dimension.
+b. Order Priority is a discrete measure, and Sum(Sales) is a continuous measure.
+c. Order Priority is a discrete dimension, and Sum(Sales) is a continuous dimension. 
+d. Order Priority is a discrete dimension, and Sum(Sales) is a discrete measure.
+Correct answer is D – Order priority and SUM(Sales) both create headers, so both are discrete. SUM(Sales) is a measure, since you cannot take the sum of a dimension. Order Priority is a string, so it must be a dimension.
+
+
+23. You connect Tableau to an Excel file which includes a column that has mostly numeric data, but has a few date and text values mixed in. Tableau set the data type for this field as Number. What happens to the date and text values when the data is imported to Tableau?
+a. The date and text values are both set to null
+b. The date and text values are both set to zero 
+c. The date values are set to the number of days since 1/1/1900 and the text value is set to null.
+d. The date values are set to the number of days since 1/1/1900 and the text value is set to zero.
+Correct answer is C - when the data type is mapped as numbers, text is treated as null while dates are treated as the number of days since 1/1/1900. See the section titled, “Mixed data types in data from files” here: https://onlinehelp.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_datatypes.htm
+
+
+24. Which field types are more common? 
+a. Discrete dimension, continuous measure
+b. Continuous dimension, continuous measure
+c. Discrete dimension, discrete measure
+d. Continuous dimension, discrete measure
+Correct answer is A - In Tableau, it is more common to have discrete dimensions and continuous measures, although fields can also be set as continuous dimensions and discrete measure. https://onlinehelp.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm#About
+
+
+25. Which of the following is the best reason to create a saved data source as a .TDS file
+a. Those who wish to use the data do not have access to the underlying data. 
+b. You want to save the default field properties such as number formats and sort order.
+c. You want to save a snapshot of the data that will not update even when the underlying data changes.
+d. You need to apply an aggregation that takes too long when using a live connection.
+Correct answer is B. TDS files save the data source metadata, such as the connection information, default field formatting, and sort order. They do not save the data source itself, and hence you should use this format if everyone who will use the data source has access to the underlying file or database defined in the connection information. Documentation here: https://onlinehelp.tableau.com/current/pro/desktop/en-us/export_connection.html
+
+
+26. When creating a union between tables, what will happen if the field names do not match?
+a. Tableau will return an error message, explaining that you must modify the tables so that all tables used in the union have the same field names.
+b. Tableau will automatically merge the fields, combining fields with similar field names. 
+c. Fields in the union that do not have matching field names will contain null values.
+d. Fields with non-matching field names will be dropped, so that the union will contain only those fields with matching field names
+Correct answer is C – if the field names do not match, the fields will be included in the UNION but will contain null values for the rows from the table that is missing the field. https://onlinehelp.tableau.com/current/pro/desktop/en-us/union.html
+
+
+27. In which of the following situations would an outer join be preferred to a blend? 
+a. when you need to include all rows from both tables, even when the join or blend criteria is not met
+b. when the data is at different level of granularity
+c. when you need to append rows from one table to rows in another table
+d. when the tables are stored in different databases
+Correct answer is A - an outer join will include all rows from both tables, even when the join criteria is not met, while a blend will not include rows from the secondary table unless there is a match on the linking field. B is not correct because blends avoid duplication when the tables are at different levels of granularity, making them preferable to joins in some situations. C is not correct because unions are for appending rows. D is not correct because both blends and cross database joins can combine tables stored in different databases.
+
+
+28. Which of the following uses a primary and secondary data source?
+a. Cross-database joins
+b. Unions
+c. Aggregation 
+d. Blending
+Correct answer is D - Data blending involves a primary and secondary data source. https://onlinehelp.tableau.com/current/pro/desktop/en-us/multiple_connections.html
+
+
+29. Which chart type will best visualize the relationship between two continuous measures?
+a. Bar chart 
+b. Scatter Plot
+c. Line Chart
+d. Stacked Bar
+Correct answer is B – Scatter plots to visualize relationships between numerical variables. Bar charts to compare data across categories. Line charts compare numeric data over time. Stacked bar charts compare numeric data over two dimensions.
+https://onlinehelp.tableau.com/current/pro/desktop/en-us/help.html#buildexamples_scatter.html?Highlight=scatter
+
+
+30. Which of the following is a table calculation?
+a. SUM 
+b. TOTAL
+c. AVG
+d. STDEV
+Correct answer is B - Of these, only TOTAL is a table calculation:
+
+
+31. You would like to create a view showing the top 5 products by sum of sales for a given state or states. A set is used to select the top 5 products by sales. What type of filter should be used with state?
+a. Multiselect Filter
+b. Dimension Filter 
+c. Context Filter
+d. Wildcard Filter
+Correct answer is C - You would like to filter on the state, and then select the top 5 products with the greatest sales from within the selected state. Therefore, you need a filter which will execute before the Set. Dimension filters execute after sets, so they are the wrong choice. If you make the filter on the state a context filter, Tableau will filter on the state, and then the set will determine the top 5 products by sales within the selected state.
+More detail here: https://onlinehelp.tableau.com/current/pro/desktop/en-us/order_of_operations.html#DimtoCtxt
+
+32. Bins can be created for which type of field?
+a. Dimension
+b. Discrete 
+c. Continuous measure
+d. Date
+Correct answer is C - A bin can be created on a continuous measure or numeric dimension https://onlinehelp.tableau.com/current/pro/desktop/en-us/calculations_bins.html
+
+
+33. The most important items on a dashboard should be positioned where?
+a. Center 
+b. Upper Left
+c. Upper Right
+d. Bottom
+Correct answer is B – Upper Left. Place the most important view at the top of your dashboard, or in the upper left corner. When looking at a dashboard, your eye is usually drawn to that corner first.
+
+
+34. You have a dashboard and you want to add a feature so that selecting an element on one of the worksheets on the dashboard causes a change on another worksheet in the same dashboard. What features will do this? (select all that apply) 
+a. Filter Action
+b. Url Action 
+c. Highlight Action
+d. Drilldown Action
+Correct answer is A & C - A filter action can filter items on another worksheet, and a highlight action can highlight items on another worksheet.
+
+
+35. What steps should you take to add a phone view to a dashboard?
+a. Instruct the those viewing the dashboard on mobile to put “m.” in front of the dashboard URL to get the mobile-friendly view. 
+b. Select Layout, then adjust the dimensions until they are appropriate for a phone (750x1334)
+c. On the “Show Me” menu, click the Phone icon 
+d. Select Device Preview, then select Phone for Device Type, then click the button labeled “Add Phone Layout”
+Correct answer is D. You create a phone view by following the steps listed.
+https://onlinehelp.tableau.com/current/pro/desktop/en-us/dashboards_dsd_create.html
+
+
+36. You start with a blank worksheet and add a continuous field to the row shelf. How will this new field change your view?
+a. It will add a horizontal axis
+b. It will add a horizontal header 
+c. It will add a vertical axis
+d. It will add a vertical header
+Correct answer is  C - vertical axis https://onlinehelp.tableau.com/current/pro/desktop/en-us/help.html#datafields_typesandroles.html?Highlight=discrete
+
+
+37. You have a scatter plot showing sales on the x-axis and profit on the y-axis, with each dot representing a different product subcategory. You want to show how the points on the scatter plot vary based on Net Profit, a third continuous variable. Which would be most appropriate? (Select all that apply)
+a. Tooltip
+b. Label 
+c. Size 
+d. Color
+Correct answer is C & D - Size would be most appropriate, because with size it is clear that larger values are respresened by larger points on the plot. This is easier for the eye to process than understanding which color or size is associated with the larger values than it is to read a label or tooltip value on each point in the scatter plot. The Visual Analysis Best Practices Guidebook explains, “a rule of thumb is to put the most important data on the X- or Y- axis and less important data on color, size, or shape.”
+
+
+38. If you have bar chart with a single bar, but you want to subdivide that bar into multiple categories, what should you add to your view?
+a. A measure 
+b. A dimension
+c. A discrete field
+d. A continuous field
+Correct answer is B – you need to add a dimension to your view to subdivide the bar.
+
+
+39. Which of the following fields will have AGG in front of it when you add it to the view? 
+a. A calculated field with the formula SUM([Profit])
+b. A measure called Profit
+c. A date field
+d. A calculated field with the formula 5 * [Profit]
+Correct answer is A - since this is a measure that has an aggregation already built in, when you add it to the view you will see AGG in front of the field name
+
+
+40. A histogram shows the distribution of ________ data by creating bins that are _________.
+a. numeric, continuous
+b. discrete, continuous
+c. continuous, discrete
+d. date, discrete
+Correct answer is C - A histogram uses bins to subdivide a continuous measure into a discrete bins.
+
+
+41. Which of the following functions can be used on string to create a measure?
+a. SUM 
+b. COUNTD
+c. +
+d. DATEDIFF
+Correct answer is B - Of these functions, only COUNTD will take a string and return a measure.
+
+
+42. You have SUM([Minutes of Delay]) in your view. If aggregate measures is unchecked, what will the view show instead of SUM([Minutes of Delay])? 
+a. Minutes of Delay
+b. ATTR([Minutes of Delay])
+c. AGG([Minutes of Delay])
+d. Minutes of Delay (bin)
+Correct answer is A – disaggregating will show the underlying values. The aggregation will be removed, so we will see just “Minutes of Delay” https://onlinehelp.tableau.com/current/pro/desktop/en-us/help.html#calculations_aggregation.html#DisAggData
+
+
+43. Which of the following is an example of metadata that can be managed in Tableau? Select all that apply.
+a. The data type of the data in the source database 
+b. Which fields are hidden
+c. The number of rows in the data 
+d. The default aggregation for a field
+Correct answer is B,D - Renaming fields and changing the defaults for formatting or aggregation are metadata management tasks that can be handled in Tableau. You can change the data type of a field in Tableau, but you cannot change the underlying data via metadata management… the data type and the number of rows in the data in the source system cannot be changed by Tableau. The documentation explains, “Changes that you make in the metadata area of the data source do not modify your underlying data.” https://onlinehelp.tableau.com/current/pro/desktop/en-us/howto_connect.htm#manage-metadata
+
+
+44. Which file type can include an extract? Select all that apply.
+a. Data Source (.tds) 
+b. Packaged Data Source (.tdsx) 
+c. Packaged Workbooks (.twbx)
+d. Workbooks (.twb)
+Correct answer is B,C - Data source files do not contain the actual data. Packaged data source files and packaged workbooks can both include extracts. Workbook files can connect to extracts, but they do not themselves include extract. See this link for further info https://onlinehelp.tableau.com/current/pro/desktop/en-us/environ_filesandfolders.htm
+
+
+45. Which of the following is most likely to reduce the size of the extract?
+a. Selecting “Multiple Table” rather than “Single Tables”
+b. Using the incremental refresh option
+c. Materialize calculations with the “Compute Calculations Now” option
+d. Removing an filter
+Correct answer is A - The Tableau documentation explains that the Multiple Tables option can potentially improve performance and help reduce the size of the extract file. When tables are joined, a new row is created each time the join criteria are satisfied, so that the resulting join can have many more rows than were in the original tables. In this case, storing the tables individually (using the Multiple Tables option) will take up less space. Using the incremental refresh option should not impact the size of the extract – it should only impact whether the refresh works by removing the old extract completely and recreating it, or whether it adds new rows to the existing extract. https://onlinehelp.tableau.com/current/pro/desktop/en-us/extracting_refresh.htm#configure-an-incremental-extract-refresh Materializing calculations may reduce the time to open the workbook since the results of the calculations will be saved in the extract, but will not reduce the workbook size. https://onlinehelp.tableau.com/current/pro/desktop/en-us/extracting_data.htm#about-the-compute-calculations-now-option-for-extracts . Removing a filter is likely to increase the size of the extract.
+
+
+46. If a Tableau workbook does not include the fields Latitude (generated) and Longitude (generated) this indicates which of the following:
+a. The workbook does not include a map
+b. The workbook does not include any fields with a geographic role of state, city, country, or zip code
+c. The workbook does not include custom geocoding
+d. All locations are ambiguous or unknown
+Correct answer is B - It doesn’t matter whether your workbook contains a map, Latitude (generated) and Longitude (generated) are created when fields are assigned geographic roles. However, this will not happen if your data already has non-generated (by Tableau) Longitude and Latitude. However, Latitude (generated) and Longitude (generated) will appear if some other field in the same data is assigned any geographic role.
+
+
+47. Which visualization always represents a measure using color?
+a. Pie chart
+b. Scatter plot
+c. Combo chart 
+d. Highlight table
+Correct answer is D - A highlight table is represents a measure using color. The other options may or may not use color to represent a measure. https://onlinehelp.tableau.com/current/pro/desktop/en-us/buildexamples_highlight.htm
+
+
+48. You would like to divide your customers into two categories – those with sales above a certain threshold and those with sales below that threshold. Which of the following tools will allow you to do this? Select all that apply.
+a. Hierarchy
+b. Parameter 
+c. Set 
+d. Calculation
+Correct answer is C,D - You can do this with a set or with a calculated field. Simply adding a parameter will not change the view. You’d need to use the parameter as part of a calculation or filter to change the view. And a hierarchy will not help with this unless you already have a field that divides into those above or below 2000.
+
+
+49. Which of the following does Tableau automatically put into a hierarchy? 
+a. Date fields (year > month > day)
+b. Geographic fields (country > city > state)
+c. Field with field name containing the keyword “sub-” (product category, product sub-category)
+d. Numeric fields (Millions > Thousands > Ones)
+Correct answer is A - The tableau documentation explains, “When you connect to a data source, Tableau automatically separates date fields into hierarchies so you can easily break down the viz. You can also create your own custom hierarchies. For example, if you have a set of fields named Region, State, and County, you can create a hierarchy from these fields so that you can quickly drill down between levels in the viz.” https://onlinehelp.tableau.com/current/pro/desktop/en-us/qs_hierarchies.htm
+
+
+50. Which of the following can you use to create a calculated field that shows the change from the prior month total?
+a. An aggregate calculation 
+b. A table calculation
+c. A basic calculation
+d. A subtraction calculation
+Correct answer is B - Table calculation can show the difference between the current and prior month. 
+
+
+51. A histogram must include which of the following? (select all that Apply) 
+a. Bin
+b. Dimension 
+c. Count
+d. Count Distinct
+Correct Answer is A,C - A histogram always bins data and uses the COUNT (also shown as CNT) function to count the number of occurrences within the bin: https://onlinehelp.tableau.com/current/pro/desktop/en-us/buildexamples_histogram.htm
+
+
+52. If you are creating a geographic map with cities, but some of the locations are showing as ambiguous, how might you correct this?
+a. Add a field called “Street Name” to the view
+b. Add Latitude (generated) and Longitude (generated) to the view. 
+c. Add a field called “State” to the view
+d. In the Edit Locations dialog box, click on one of the Ambiguous cells to match a known location to your unknown data. When you click on an unrecognized cell, a search box appears. As you begin typing in the search box, Tableau generates a list of possible locations. Select a location from the list.
+Correct answer is C - When you see that a city is ambiguous that means it exists in multiple states or countries, and so Talbeau doesn’t know which state or country to map it to. For example, there is a Rome in Italy, but also a less-well known city also called Rome, New York in the USA https://en.wikipedia.org/wiki/Rome%2C_New_York. Tableau does not map streets, so including street name will not resolve the ambiguity. Adding Latitude (generated) and Longitude (generated) will not resolve ambiguous locations because unless Tableau has more information it cannot determine which state or country the city should go in. Editing the location will help for misspelled or unrecognized locations, but not for ambiguous locations. Adding State might resolve the ambiguity. For example, if the city is Rome and we add New York, Tableau will know that the city is not Rome in Italy but rather Rome in New York state. https://onlinehelp.tableau.com/current/pro/desktop/en-us/maps_editlocation.htm Answer D is not correct because the Edit Location Dialog Box requires a latitude and longitude to resolve the ambiguity:
+
+
+53. Your view has a histogram showing the distribution of Sales. You’d like to use a color gradient to shade the bars according to the value of Profit. You drag profit to the color mark. How would you adjust the colors so that all negative values are shown in one color and all positive values are shown in a second color?
+a. Click the colors mark, select edit colors, and check center on zero and switch the dropdown from continuous to discrete color gradient.
+b. Click on the quantitative legend and select format legend. Select a diverging palette and stepped color. 
+c. Click the arrow on the colors mark, select edit colors, select a diverging palette from the dropdown and check stepped color with 2 steps and check center on zero.
+d. Click the colors mark, switch to a palette with two colors and check discrete color.
+Correct answer is C 
+
+
+54. For which of the following is it not possible to adjust the size of the marks?
+a. Bar chart 
+b. Tree map
+c. Pie chart
+d. Heat maps
+Correct answer is B - Try adjusting size on a tree map and you will see it is not an option. If you look at the other visualizations listed, you will see that you can edit the mark size.
+
+
+55. Editing the font at the worksheet level applies the changes you make to all text fields in view except for which of the following? (select all that apply)
+a. Header
+b. Axis
+c. Caption 
+d. Tooltip
+Correct answer is D - Editing the font at the worksheet level applies the changes you make to all text fields in view except the Tooltip fields. Try it yourself to confirm, and also look at the example below where I’ve changed the font for the workbook but the tooltip is unchanged. If you want to change the tooltip, you need to set the font using the highlighted box or click on the tooltip card and edit.
+
+
+56. You have a dashboard containing multiple worksheets. One of the worksheets in the dashboard has a scroll bar. Which of the following steps can you take to remove the scroll bar?
+a. Right click on the scroll bar and select remove. 
+b. Click the more options arrow, select fit, and select fit height.
+c. Click the more options arrow, select font, and use the dropdown to decrease the font size to reduce the size of the worksheet.
+d. Right click on the worksheet name on the dashboard pane, select fit, and then select entire view.
+Correct answer is B - There is no “remove” option, so choice “a is not correct. If you try “fit height” you will see that this adjusts the size so that the scrollbar no longer shows.
+
+
+57. If you drag a field called Sales to the filter area, and you do not get a menu to select the Aggregation to be applied, but are immediately taken to the filter menu, what does this indicate about Sales?
+a. It is set as a measure 
+b. It is set as a dimension
+c. It is set as discrete
+d. It is set as continuous
+Correct answer is B - But if it is set as a dimension, you will be taken immediately to a filter menu. But the filter n=menu will differ based on whether it is discrete or continuous. But in either case, if the field is set as a dimension then you only have the option to filter on the row-level values, not on the aggregated values.
+
+
+58. A line chart is broken into separate sections by year. What does this indicate about the date used in the line chart?
+a. The date is a continuous dimension
+b. The date is a continuous measure
+c. The date is a discrete measure 
+d. The date is a discrete dimension
+Correct answer is D 
+
+
+59. Which of the following will increase the granularity of the view? 
+a. Adding a dimension to the marks area
+b. Adding a measure to the marks area
+c. Adding a dimension as a filter
+d. Adding a measures as a filter
+Correct answer is A - Adding a dimension to the marks area will increase the granularity of the view
+
+
+60. Profit and Sales are continuous measures in the workbook. Order ID is a dimension. Which of the following will most likely not have further aggregation applied when it is added to the view?
+a. {FIXED [Order ID] : max([Sales])} 
+b. SUM([Sales])
+c. [Sales] – [Profit]
+d. Year([Order Date])
+Correct answer is B - {FIXED [Order ID] : max([Sales])} is a level of detail calculation, and so it is not yet aggregated. The calculated field Year([Order Date]) will by default be a measure, so it will be aggregated when added to the view. SUM([Sales]) is already aggregated, so it will not be further aggregated when added to the view. Instead Tableau will use AGG([Field Name]) to represent the fact that the field is already aggregated. The calculated field [Sales] – [Profit] is a measure, but is not yet aggregated. It will be aggregated when it is added to the view.
+
+
+61. Your view has a numeric field set as a discrete measure and a dimension. Which of the following visualizations can you create with these fields? (select all that apply)
+a. Line chart 
+b. Text tables
+c. Highlight table
+d. Histogram
+Correct answer is B - Because you have a discrete measure rather than a continuous measure, the visualizations available are more limited. The only option that is not greyed out is text table.
+
+
+62. Which of the following fields is most likely to be a dimension?
+a. Unique Order Count 
+b. Sales (bin)
+c. Sales
+d. Measure Values
+Correct answer is B - The Tableau documentation explains, “When you create bins from a measure you create a new dimension” https://help.tableau.com/current/pro/desktop/en-us/calculations_bins.htm

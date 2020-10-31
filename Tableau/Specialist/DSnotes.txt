@@ -1,0 +1,103 @@
+>>>>>>> DESKTOP SPECIALIZATION EXAM <<<<<<<<
+
+>> Dimensions, Measures, Discrete & Continuous:
+- Dimensions: Qualitative,  Affect LoD in view
+- Measures:   Quantitative, Aggregated by default
+- Discrete:   Blue,         treated as an finite,         add Headers to View
+- Continuous: Green,        treated as an infinite range, add Axes to View
+
+>> Data Connections
+- Live Connections: 1) Connecting directly to the source. The data is imported and the connection to the source is maintained. Upon saving any changes to the datasource, when you go to View > Right click on Datasource > Refresh Data, then the changes done at the source will reflect in Tableau. 2) The workbook will not work if you are unable to connect to the datasource. 3) For DB Live Connections, you will have to enter your credentials. 
+- Extract: 1) Refreshing the View will not bring in the new changes. You will have to refresh the Extract to fetch the changes. 2) Once the extract is created, the workbook can work without connecting to the original datasource. Create the extract while connected to the network then work offline with the extract. 3) No credentials required as, basically, you are just accessing a file.
+- Tableau Data Source (TDS): Store the necessary information to connect to the data source such as server name and port, as well as the changes made to the data such as changing the default formatting and adding Calculated Fields. Does NOT contain the actual data.
+- Extracting the data: https://help.tableau.com/current/pro/desktop/en-us/extracting_data.htm
+- File types and folders: https://help.tableau.com/current/pro/desktop/en-us/environ_filesandfolders.htm
+- Why use Extracts: https://www.tableau.com/about/blog/2014/7/why-use-tableau-data-extracts-32187
+
+>> Joins
+- A Join combines the data and then aggregates them.
+- To combine multiple tables.
+- By default, the Canvas shows the Logical layer (where we can do Relationships). We need to shift to the Physical layer to do Joins. Double click on the current table in the Canvas to open the Physical layer.
+- Drag and drop the second table on to the Physical layer away from the first table. This creates a Venn Diagram, with the default Inner Join. Clicking on the  Venn allows us to change the Join. Venn Diagram = Joins
+- Inner Join: Includes only values of a particular field which matches in both tables.
+- Left Join: Includes all values from left table and all matches of a particular field from the right table. Members without matches will show up as nulls on the right.
+- Right Join: Includes all values from right table and all matches of a particular field from the left table. Members without matches will show up as nulls on the left.
+- Outer Join: Includes all values from both tables. Members without matches show up as null.
+- Joining Data: https://help.tableau.com/current/pro/desktop/en-us/joining_tables.htm
+
+>> Blending
+- Blends can help combine data with different levels of granularity without duplication. With joins, everytime the join criteria is satisfied we get another row in the resulting dataset. With a blend, a primary data source is linked to the secondary data source. The data in the secondary data source will not be duplicated even if the linking criteria is satisfied multiple times.
+- For blending data, in the View > Left corner contains the datasources > Toggling between them will show the various fields in the respective datasources. Tableau automatically shows a linking icon near one of the fields of one datasource to connect to the other datasource. If you need to link multiple fields, then Data (next to File) > Edit Blend Relationships > select the Primary and Secondary datasources and the linking field
+- A Blend aggregates and then combines the data( meaning, it aggregates the data from different datasource and then links them ). Therefore there is no duplication.
+- Blend is NOT a single datasource. Joins create a single datasource that Tableau uses but Blend is actually Blending 2 different datasources. If you want to Blend 2 tables from the same Excel, then you can add the same file as 2 different datasources and select the different tables from the files. Then, in the Sheet at top left you will find the 2 datasources (or tables) added.
+- Data from the Primary Datasource is always included in the View, but data from the Secondary datasource is only included when there is atleast one row that matches on the linking field (similiar to a Left Join).
+- A blue tick mark indicated which datasource is the Primary. An orange tick mark indicated which datasource is the Secondary. An orange linking icon indicates the Fields on which the Blend is done.
+- The Primary and Secondary statuses of the datasource are maintained at the Worksheet level and not at the Global level.
+- Blending: https://help.tableau.com/current/pro/desktop/en-us/multiple_connections.htm
+- While creating Calculated Fields using both Datasources, the data from the secondary datasource must always be Aggregated.
+- The created Calculated Fields will appear only in one of the datasources: the one that was selected while creating the Field.
+
+>> Unions
+- Joins and Blends combine fields(columns) from different tables. Unions are a way to add rows from one table to the rows from another table.
+- Once Union is done, the Data Grid has 2 new additional columns - Sheet & Table Name - to specify the table that the rows belong to.
+- To Merge values from 2 columns > Select them > Right Click > Merge Mismatched Fields
+- Right Click on the Tables in the Canvas > Edit Union > Wildcard - If you will always work with multiple tables that need to be Union-ed, then you can set this settings so that it will always search for the files in the folder and Union them.
+- Unions: https://help.tableau.com/current/pro/desktop/en-us/union.htm
+
+>>>>>>> TABLEAU TUTORIALS <<<<<<<<
+
+>> Getting Started
+- Each Datasource can contain multiple sheets or tables. Joins or Relationships can be formed between these different tables that belong to the same datasource. 
+- In the Datasource page, adding a connection and adding a new datasource is different. Adding a connection adds a new entry on the left pane. But adding a Datasource does not add a separate connection. It switches the connection whenever the datasource is switched. 
+- Adding a new connection creates an integrated Datasource (see Cross Database Joins)
+- Metadata management - Change the datatype of the field, Can do 'Split' operations on the data in the fields, Rename the fields
+- Live data connection - Great when we have constantly changing data with a high performance db
+- Extract: Imports the data into the Tableau Engine; To prevent performance impact on critical systems; allows regular scheduled refreshes
+- Stories: The ability to snapshot a specific insight of a visualisation while still maintaining interactivity
+
+>> Distributing and Publishing
+- Images & PDFs: just snapshots taken at a particular time and thereby are static; Packaged Workbooks: may contain the underlying data and are not encrypted; Non-packaged Workbooks: Require the recepients to have access to the same datasource
+- Tableau Reader: View and interact with workbooks; Tableau Desktop: View and Edit workbooks
+- Workbooks can be published to T-Online or T-Server and can have scheduled refreshes and maintain a live connection to the datasource. Published Wbs are secure can be accessed on any major web browsers or on the mobile T-app.
+- Dashboard > Export Image: The current state of the dashboard
+- Story > Export Image: Will contain the current story point in it current state.
+- File > Print to PDF: Can print the entire Wb or a specific sheet to PDF. Entire Wb includes each story point.
+- .twb : Wb file format that is non packaged with the actual data. It contains only the information of connections and the details to construct the view. Therefore, access to the same datasource that was used to create it is necessary to open a .twb file.
+- .twbx : Packaged workbook containing the Wb and the necessary data and offline files. They are NOT encrypted and have no data security. Therefore all the underlying data is visible to anyone who accesses the Wb
+
+>> Relationships
+- Noodles that connect related tables on the T-Datasource page
+- Define how data source tables relate to one another using common fields(columns).
+- Benefits: 1) A single datasource can answer a wide variety of business questions. 2) An intuitive analytic esperience. 3) A simple datasource creation process 4) Efficient datasources for fast reporting
+- Once the relationships are established, on the data pane in the sheets the fields are organised by table. Within each table, the dimensions and measures are separated by a horizontal line.
+- On the data pane, right click on the field to change its default properties. 
+- When it comes to adding the fields that are the common ones between 2 tables to the view, it DOES matter which table it is chosed from. It will have an impact on the amount of data displayed on the View
+- If the Calculated field contains only fields from one table, then the Calculated field also appears within the same table in the data pane. On the other case, it appears at the bottom of the data pane. An aggregate calculations always appear at the bottom of the data pane.
+
+>> Managing Metadata
+- Tableau cannot write changes back to the datasource. 
+- In the data pane of the View: Can hide fields. Can rename. Can create hierarchies. Can create folders by Right click > Group by folder & then Right click > Create folder. Can change the default data type by clicking on the icon before the field and changing it. Right click > Default Properties on a Measure to change a variety of default props.
+- Can change the default colour of a field by dragging it to the Color Marks and then editing the colour. The set colour will be remembered next time the field is added to the View.
+- When using a published datasource from T-Server or T-online, we will not be able to do things like: edit or remove existing Hierarchies, Aliases or Calculations. But we can extend the metadata by adding new Calculations. 
+- Right click on the Datasource at the top in the Data pane to control many of its features. 
+
+>> Managing Extracts
+- Right Click on the Datasource in the Data pane of the View > Extract Data
+- .twbx workbooks will automatically save the created Extracts along with it. .twb workbook will ask where to save the .tde Extract file.
+- Extracts are imported into the fast Data Engine of Tableau.
+- When Extracts are updated we will have to manually select to refresh the Extract to get the latest changes. 
+- Published Extracts can have their refreshes handled by T-Server or T-Online.
+- Datasources can be replaced by Right click > Replace DS. This will swap the datasources.
+
+>> Saving and Publishing Datasources
+- In the View, Right click on the Datasource > Add to Saved Datasources. This will save the connection as a .tds file. The actual data is not saved in a .tde file.
+- Server > Publish Datasource will allow you to publish the Datasource to a server. Project, Name, Description, Tags, Permissions etc can be controlled before a Datasource is published to server.
+- To edit a published Datasource, we need to be connected to the original datasource. After making the necessary changes, we can publish it again and override the existing Datasource in the server.
+- Publishing a Live Datasource has the same steps but you can also add authentications.
+- Publishing an Extract allows you to schedule Refreshes additonally which can be set by the server admin.
+- While setting permissions to users, the following factors can be controlled: View, Save, Download/Save As, Delete, Set Permissions and Connect.
+
+>> Cross Database Joins:
+- To join 2 different files, we have to click on the Add Connections button (the blue Add button near Connections in the datasource page) and NOT the Add Datasource button.
+- Now, this is an integrated datasource and it functions just as a single datasource. Unlike Blend, this can be published and saved.
+- In Blend you just combine data from different datasources into a single View. But in Cross database joins, the different datasources are combined into single DS and is used.

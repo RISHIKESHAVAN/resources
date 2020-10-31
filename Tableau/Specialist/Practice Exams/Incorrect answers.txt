@@ -1,0 +1,150 @@
+#### PRACTICE EXAM ####
+
+>> EXAM 1 - https://learningtableau.com/quiz/tableau-specialist-exam-1/:
+Questions answered incorrectly [if any]
+10 . Which chart type will best visualize the relationship between two continuous measures?
+Answer Provided: Bar chart
+Correct Answer: Scatter Plot
+11. Which of the following is a table calculation?
+Answer Provided: STDEV
+Correct Answer: TOTAL
+12. You would like to create a view showing the top 5 products by sum of sales for a given state or states. A set is used to select the top 5 products by sales. What type of filter should be used with state?
+Answer Provided: Multiselect Filter
+Correct Answer: Context Filter
+19. Analysts hope that Apple stock price will increase by 10% in 2015. Using the Stocks worksheet from the tds_sample_data_all workbook, create a calculated field called 2015 High that multiplies the value of High by 1.1. Use MAX aggregation to determine the maximum value of New High for Apple Stock.
+Answer Provided: 448.9
+Correct Answer: 131.7
+21. You have a dashboard and you want to add a feature so that selecting an element on one of the worksheets on the dashboard causes a change on another worksheet in the same dashboard. What features will do this? (select all that apply)
+Answer Provided: Filter Action.
+Correct Answer: Filter Action.Highlight Action.
+24. You have a scatter plot showing sales on the x-axis and profit on the y-axis, with each dot representing a different product subcategory. You want to show how the points on the scatter plot vary based on Net Profit, a third continuous variable. Which would be most appropriate? (Select all that apply)
+Answer Provided: Label.Size.Color.
+Correct Answer: Size.Color.
+
+>> EXAM 2
+6. Create a union of World Literacy Rate 1976 to 1991 and World Literacy Rate 1992 to 2016. What is the percent increase in the literacy rate from 1976 to 2016?
+Answer Provided: 17.36%
+Correct Answer: 25.19%
+9. You would like the person using your dashboard to select the year, and based on the year to adjust the interest rate in some related calculated fields. You will like the year selection to limit the data in the view. What Tableau element should you to let the user select the interest rate?
+Answer Provided: Change Set values Dashboard Action
+Correct Answer: Parameter
+10. Which type of visualization is not typically effective in showing change over time?
+Answer Provided: Bar Chart
+Correct Answer: Scatter Plot
+13. Which of the following will result in an error
+Answer Provided: A calculation that includes more than one aggregation
+Correct Answer: Aggregation on a field that is already aggregated
+17. Which type of filter usually works best with date fields?
+Answer Provided: Checkboxes
+Correct Answer: Slider filters
+18. A relative date filter work relative to:
+Answer Provided: The current date when the workbook is viewed
+Correct Answer: The anchor date
+27. Examine the following view and describe the most likely field type for Order Priority and Sum(Sales)
+Answer Provided: Order Priority is a discrete dimension, and Sum(Sales) is a continuous dimension.
+Correct Answer: Order Priority is a discrete dimension, and Sum(Sales) is a discrete measure.
+
+
+
+Questions Answered Incorrectly [if any]
+1. Which of the following is an example of metadata that can be managed in Tableau? Select all that apply.
+Answer Provided: The data type of the data in the source database.Which fields are hidden.The number of rows in the data.The default aggregation for a field.
+Correct Answer:
+2. Which file type can include an extract? Select all that apply.
+Answer Provided: Packaged Data Source (.tdsx).Packaged Workbooks (.twbx).
+Correct Answer:
+3. Which of the following is most likely to reduce the size of the extract?
+Answer Provided: Materialize calculations with the “Compute Calculations Now” option
+Correct Answer:
+4. If a Tableau workbook does not include the fields Latitude (generated) and Longitude (generated) this indicates which of the following:
+Answer Provided: The workbook does not include any fields with a geographic role of state, city, country, or zip code
+Correct Answer:
+5. Union the Stocks 2010-2013 and Stocks 2014 tables, and then create a table showing the minimum value for Low stock price for each company in each quarter. Following Q2 of 2013, which company increased its minimum Low stock price for the most quarters in a row?
+Answer Provided: Apple, minimum low increased for six quarters in a row
+Correct Answer:
+6. Blend the Southern Region table from the South_Superstore file with the Targets table from the South_Superstore  file. Add subcategory, SUM(Sales) and Sales Target to the view. For which of the following subcategories did sales meet or exceeded the target value? In other words, when was SUM([Sales]) greater than SUM([Sales Target])?
+Answer Provided: Binders
+Correct Answer:
+7. Create an inner join to combine the Southern Region worksheet with the Rewards customer worksheet. The join field should be Customer ID. What segment had the highest sales for rewards customers? Within that segment, which customer had the highest sales?
+Answer Provided: Top segment is Consumer, and the top customer within that segment is Shahid Collister
+Correct Answer:
+8. Which visualization always represents a measure using color?
+Answer Provided: Highlight table
+Correct Answer:
+9. You would like to divide your customers into two categories – those with sales above a certain threshold and those with sales below that threshold. Which of the following tools will allow you to do this? Select all that apply.
+Answer Provided: Set.
+Correct Answer:
+10. Which of the following does Tableau automatically put into a hierarchy?
+Answer Provided: Geographic fields (country > city > state)
+Correct Answer:
+11. Which of the following can you use to create a calculated field that shows the change from the prior month total? Select all that apply
+Answer Provided: An aggregate calculation.A table calculation.
+Correct Answer:
+12. In which year or years is SUM(Profit) greater than SUM(Sales)?
+
+refreshed graph
+Answer Provided: None of the above
+Correct Answer:
+13. The chart below has the value for one of the average reference lines highlighted in the tool-tip, with a value of 19,883.  What does this average line represent?
+
+Answer Provided: The average values of sales for all sub-categories in the office supplies category
+Correct Answer:
+14. A histogram must include which of the following? (select all that Apply)
+Answer Provided: Bin.
+Correct Answer:
+15. If you are creating a geographic map with cities, but some of the locations are showing as ambiguous, how might you correct this?
+Answer Provided: In the Edit Locations dialog box, click on one of the Ambiguous cells to match a known location to your unknown data. When you click on an unrecognized cell, a search box appears. As you begin typing in the search box, Tableau generates a list of possible locations. Select a location from the list.
+Correct Answer:
+16. Using the Southern Region worksheet of the South SuperStore data, looking just at orders placed in 2014, what percent of the total sales comes from the Home Office segment?
+Answer Provided: 5.67%
+Correct Answer:
+17. Using the Southern Region worksheet from the South Superstore file, find the top 10 products by sales in the home office segment. Which of the following products is in the top 10?
+Answer Provided: Iceberg Mobile Mega Data/Printer Cart
+Correct Answer:
+18. Using the Southern Region data on the South Superstore file, create a histogram showing the number of Sales using Sales Bins of $500. Which bins have negative total profit? (Select all that apply)
+Answer Provided: 1500.4000.
+Correct Answer:
+19. Your view has a histogram showing the distribution of Sales. You’d like to use a color gradient to shade the bars according to the value of Profit. You drag profit to the color mark. How would you adjust the colors so that all negative values are shown in one color and all positive values are shown in a second color?
+Answer Provided: c. Click the arrow on the colors mark, select edit colors, select a diverging palette from the dropdown and check stepped color with two steps and check center on zero.
+Correct Answer:
+20. For which of the following is it not possible to adjust the size of the marks?
+Answer Provided: Tree map
+Correct Answer:
+21. Editing the font at the worksheet level applies the changes you make to all text fields in view except for which of the following?
+Answer Provided: Tooltip
+Correct Answer:
+22. You have a dashboard containing multiple worksheets. One of the worksheets in the dashboard has a scroll bar. Which of the following steps can you take to remove the scroll bar?
+
+
+Answer Provided: Right click on the worksheet name on the dashboard pane, select fit, and then select entire view.
+Correct Answer:
+23. Which of the following describes the layout of the dashboard below?
+
+Answer Provided: Tiled layout with the legend floating
+Correct Answer:
+24. If you drag a field called Sales to the filter area, and you do not get a menu like the one shown below
+
+but are immediately taken to the filter menu like this:
+
+what does this indicate about Sales?
+Answer Provided: It is set as a dimension
+Correct Answer:
+25. In this view, which field is continuous and which is discrete?
+
+Answer Provided: Sales is continuous and Profit is discrete
+Correct Answer:
+26. A line chart is broken into separate sections by year. What does this indicate about the date used in the line chart?
+Answer Provided: The date is a discrete dimension
+Correct Answer:
+27. Which of the following will increase the granularity of the view?
+Answer Provided: Adding a dimension to the marks area
+Correct Answer:
+28. Profit and Sales are continuous measures in the workbook. Order ID is a dimension. Which of the following will most likely not have further aggregation applied when it is added to the view?
+Answer Provided: {FIXED [Order ID] : max([Sales])}
+Correct Answer:
+29. Your view has a numeric field set as a discrete measure and a dimension. Which of the following visualizations can you create with these fields?
+Answer Provided: Text tables
+Correct Answer:
+3o. Which of the following fields is most likely to be a dimension?
+Answer Provided: Sales (bin)
+Correct Answer:

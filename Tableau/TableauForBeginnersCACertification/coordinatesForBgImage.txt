@@ -1,0 +1,11 @@
+40.9778 north
+40.4156 south
+-73.7114 east
+-74.5903 west
+
+
+New Jersey
+41.212 north
+38.814 south
+-71.900 east
+-76.108 west

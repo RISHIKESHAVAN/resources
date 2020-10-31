@@ -66,7 +66,7 @@ BLOCKCHAIN:
 - The ledger is a record-keeping methodology or a data maintenance system for a company's financial or non-financial data with the generated records validated by a means of a pre-authorized source.
 - The ledger reports are vital in taking decision on advancement and evolution of the company's prospective strategies.
 - Thus ledgers play a crucial role in any data management system.
-- Blockchain being a distributed ledger technology, holds a crucial amount of importance of ledgers in it implementation cycle.
+- Blockchain being a distributed ledger technology, holds a crucial amount of importance for ledgers in it implementation cycle.
 
 ♦ What is a Transaction?
 - Transaction is basically a transfer of asset from one part to another and its commitment on the ledger depending upon the terms and protocols mentioned in the contract.
@@ -152,7 +152,7 @@ These mechanisms are further divided into various sub-categories like proof of w
 	> Universal Liquid usability: It specifically refers to the use of blockchain technoloy in offering digital tokens as an asset. May those tokens be initial coin offerings, security token offerings or any such offering where digital tokens are used as valuation agent in the transaction. Eg. Cryptocurrencies
 	
 ♦ Blockchain vs Bitcoin
-- Blockchain - technology & Bitcoin - application
+- Blockchain - technology ; Bitcoin - application
 - Blockchain is a distributed ledger technology and bitcoin is a cryptocurrency.
 - Implementation of a bitcoin: Bitcoin is basically a digital token, thus it is an asset. Before the flow of ownership of bitcoin as an asset from one individual to another, it has to pass through:
 	> Cycle of transaction
