@@ -1,0 +1,23 @@
+> GIT:
+#Perform a quick update on your instance:
+sudo yum update -y
+#Install git in your EC2 instance
+sudo yum install git -y
+#Check git version
+git version
+
+> SNAP ON Amazon Linux 2 EC2:
+https://github.com/albuild/snap
+
+> DOCKER ON Amazon Linux 2 EC2: (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html)
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+<log out and log in>
+docker info
+
+> NODE ON Amazon Linux 2 EC2: (https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node

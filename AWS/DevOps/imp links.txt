@@ -1,0 +1,11 @@
+Infrastructure - https://aws.amazon.com/about-aws/global-infrastructure
+EC2 pricing - https://aws.amazon.com/ec2/pricing/on-demand/
+EC2 instance types - https://aws.amazon.com/ec2/instance-types/
+Summary of EC2 instances - https://ec2instances.info/
+AWS free tier details - https://aws.amazon.com/free/
+EBS volume types - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html?icmpid=docs_ec2_console
+ElastiCache Strategies - https://aws.amazon.com/caching/best-practices/
+EC2 metadata (from the instance)- http://169.254.169.254/latest/meta-data/latest/availability-zone
+VPC - https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html
+Creds chain - https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#config-settings-and-precedence
+AWS whitepaper - https://aws.amazon.com/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&awsf.whitepapers-category=*all

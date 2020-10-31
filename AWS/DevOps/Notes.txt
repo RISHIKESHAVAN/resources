@@ -1,0 +1,30 @@
+******* Ultimate AWS Certified Developer Associate 2020 *******
+(https://citigroup.udemy.com/course/aws-certified-developer-associate-dva-c01/learn)
+
+>> PRIVATE, PUBLIC & ELASTIC IPs (23 & 24):
+- Networking has 2 types of IPs: IPv4 & IPv6
+- AWS supports both. 
+- IPv4 is most common now. allows 3.7 billion addresses: IPv4: [0-255].[0-255].[0-255].[0-255]
+- Private IP: Machine is identifiable only within a network. 2 different private networks can have same IPs. Only a specific range of IPs can be used as a private IP.
+- Public IP: Machine is identifiable over the web. Unique across the whole web. Can be geo located easily.
+- Elastic IP: Provides a fixed IP for your instance (since the public IP of the instance changes when you stop and start it). Attach it to one instance only at a time. When you attach an elastic IP, your public IP changes to the Elastic IP. Even when you stop the instance, the public IP stays in place. Can have only 5 Elastic IPs in your account(can ask AWS to increase that). But it is rarely used. Basically - try and avoid using Elastic IPs. Rather use a DNS (Route 53) or a load balancer.
+- By default EC2 instance comes with: a private IP and a public IP. When SSHing, we can use only the public IP as we are not on the same network. If Machine is stopped and started, THE PUBLIC IP CAN CHANGE.
+- Stop and start -> Public IP changes; Private IP is same
+
+>> EC2 INSTANCE LAUNCH TYPES (27 & 28; ppt36) [Important for the exam]
+
+>> ELASTIC NETWORK INTERFACES (ppt53)
+- We can move an ENI attached to one EC2 instance to another on the fly - so that the private IP associated with the ENI is not connected to the new instance - very helpful for failovers. We can manage the IP addresses (add or remove) in the ENI.
+- https://aws.amazon.com/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/
+- Bound to a specific AZ
+
+>> ELASTIC LOAD BALANCER:
+- Can be spread across multiple AZs. TCP - Layer 4; HTTP & HTTPS - Layer 7
+- CLB (older): HTTP, HTTPS, TCP
+- ALB: HTTP, HTTPS, Websocket
+- NLB: TCP, TLS, UDP
+- Troubleshooting:
+	• 4xx errors are client induced errors
+	• 5xx errors are application induced errors
+	• Load Balancer Errors 503 means at capacity or no registered target
+	• If the LB can’t connect to your application, check your security groups!

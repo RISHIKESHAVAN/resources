@@ -1,0 +1,27 @@
+CAREERS IN DATA SCIENCE - UDEMY - SUPERDATASCIENCE
+
+I . Main skills to learn:
+- Select 2-3 topiccs and become really good at those. Branch out later on.
+- Learn to learn fast
+
+II. Statistics topics to learn:
+- Statistic test - p value, chi squared tests, confidence intervals
+- ARIMA models
+- Central Limit Theorem
+- Law of large numbers
+- Bayesian Statistics, Bayesian Inference - for deeper learnings
+
+III. Programming Languages:
+- Python
+- R
+- Hadoop
+- Spark
+- Scala
+- SQL
+
+IV. CV
+- Enhance the titles and summary
+- Top and middle portion of the page are important
+
+V. Blogs/Portfolio - MUST
+- Standing out = Creation + Communication
