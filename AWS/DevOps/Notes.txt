@@ -1,5 +1,4 @@
 ******* Ultimate AWS Certified Developer Associate 2020 *******
-(https://citigroup.udemy.com/course/aws-certified-developer-associate-dva-c01/learn)
 
 >> PRIVATE, PUBLIC & ELASTIC IPs (23 & 24):
 - Networking has 2 types of IPs: IPv4 & IPv6

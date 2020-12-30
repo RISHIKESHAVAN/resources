@@ -1,0 +1,20 @@
+******* Ultimate AWS Certified Solutions Architect Associate 2020 *******
+
+>> AWS Regions
+- Geographical locations of set of Data Centres
+- Names end with a number: us-east-1 etc.
+- EC2 is a regional service whereas IAM is a Global service.
+
+>> Availability Zones
+- AZ names end with a letter.
+- Each AZ is a discrete DC.
+- Geographically separated from one another to protect from disasters
+- Technically connected with high bandwidth, ultra-low latency networking
+
+>> Identity and Access Management
+- Users, Groups and Roles.
+- JSON policies
+
+>> SSH from Mac
+- ssh -i <.pem key file> ec2-user@<publicIP>
+- When we first download the key file, it will have a permission of 0644. This is too open and could potentially cause 
