@@ -25,7 +25,12 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
-  return
+  st = 'Number of donuts: '
+  if count < 10:
+    st = st + str(count)
+  else:
+    st = st + 'many'
+  return st
 
 
 # B. both_ends
@@ -35,7 +40,11 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
-  return
+  if len(s) > 2:
+    st = s[:2] + s[-2:]
+  else:
+    st = ''
+  return st
 
 
 # C. fix_start
@@ -49,7 +58,8 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
-  return
+  st = s[0]+s.replace(s[0], '*')[1:]
+  return st
 
 
 # D. MixUp
@@ -61,7 +71,9 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
-  return
+  c = b[:2]+a[2:]
+  d = a[:2]+b[2:]
+  return c + ' ' + d
 
 
 # Provided simple test() function used in main() to print
@@ -71,13 +83,13 @@ def test(got, expected):
     prefix = ' OK '
   else:
     prefix = '  X '
-  print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
+  print ('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
 
 
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-  print 'donuts'
+  print ("donuts")
   # Each line calls donuts, compares its result to the expected for that call.
   test(donuts(4), 'Number of donuts: 4')
   test(donuts(9), 'Number of donuts: 9')
@@ -85,7 +97,7 @@ def main():
   test(donuts(99), 'Number of donuts: many')
 
   print
-  print 'both_ends'
+  print ('both_ends')
   test(both_ends('spring'), 'spng')
   test(both_ends('Hello'), 'Helo')
   test(both_ends('a'), '')
@@ -93,14 +105,14 @@ def main():
 
   
   print
-  print 'fix_start'
+  print ('fix_start')
   test(fix_start('babble'), 'ba**le')
   test(fix_start('aardvark'), 'a*rdv*rk')
   test(fix_start('google'), 'goo*le')
   test(fix_start('donut'), 'donut')
 
   print
-  print 'mix_up'
+  print ('mix_up')
   test(mix_up('mix', 'pod'), 'pox mid')
   test(mix_up('dog', 'dinner'), 'dig donner')
   test(mix_up('gnash', 'sport'), 'spash gnort')
