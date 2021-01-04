@@ -6,6 +6,7 @@
 # Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
+from os import name
 import sys
 import re
 
@@ -41,8 +42,31 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
-  return
+  f = open(filename)
+  html_string = f.read()
+  year_matcher = re.search(pattern=r'Popularity in (\d\d\d\d)', string=html_string)
+  if not year_matcher:
+    print('Year name not found in file. Exiting!!')
+    sys.exit(1)
+  names_list = []
+  names_list.append(year_matcher.group(1))
+  match_names = re.findall(pattern=r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', string=html_string)
 
+  for tupl in match_names:
+    male = tupl[1] + ' ' + tupl[0]
+    female = tupl[2] + ' ' + tupl[0]
+    names_list.append(male)
+    names_list.append(female)
+  
+  names_list.sort()
+  return names_list
+
+def write_name_summary(filename, all_names):
+  f = open(filename, 'w')
+  for entry in all_names:
+      f.write(entry)
+      f.write('\n')
+  f.close()
 
 def main():
   # This command-line parsing code is provided.
@@ -51,7 +75,7 @@ def main():
   args = sys.argv[1:]
 
   if not args:
-    print 'usage: [--summaryfile] file [file ...]'
+    print('usage: [--summaryfile] file [file ...]')
     sys.exit(1)
 
   # Notice the summary flag and remove it from args if it is present.
@@ -63,6 +87,14 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
+  for filename in args:
+    if summary:
+      write_name_summary(filename+'.summary', extract_names(filename))
+    else:
+      for name_list in extract_names(filename):
+        for entry in name_list:
+          print(entry)
+
   
 if __name__ == '__main__':
   main()
