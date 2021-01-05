@@ -10,14 +10,36 @@ import sys
 import re
 import os
 import shutil
-import commands
+import subprocess
 
 """Copy Special exercise
 """
 
 # +++your code here+++
 # Write functions and modify main() to call them
+def get_special_paths(dir):
+  abspaths=[]
+  dirs = os.listdir(dir)
+  for d in dirs:
+    matcher = re.search('__\w+__', d)
+    if matcher:
+      full_dir = os.path.join(dir,d)
+      abspaths.append(os.path.abspath(full_dir))
+  return abspaths
 
+def copy_to(paths, dir):
+  for filepath in paths:
+    print('Copying ', filepath, 'to', dir)
+    shutil.copy(filepath, dir)
+
+def zip_to(paths, zippath):
+  cmd = 'zip -j '+ zippath
+  for filepath in paths:
+    cmd = cmd + ' ' + filepath
+  print('Command to be executed:', cmd)
+  process = subprocess.run(cmd)
+  if process.returncode:
+    print(process.stderr)
 
 
 def main():
@@ -28,7 +50,7 @@ def main():
   # which is the script itself.
   args = sys.argv[1:]
   if not args:
-    print "usage: [--todir dir][--tozip zipfile] dir [dir ...]";
+    print("usage: [--todir dir][--tozip zipfile] dir [dir ...]")
     sys.exit(1)
 
   # todir and tozip are either set from command line
@@ -38,14 +60,20 @@ def main():
   if args[0] == '--todir':
     todir = args[1]
     del args[0:2]
+    print('Copying from: [', args[0], '] to: [', todir,']')
+    copy_to(get_special_paths(args[0]),todir)
+    sys.exit(1)
 
   tozip = ''
   if args[0] == '--tozip':
     tozip = args[1]
     del args[0:2]
+    print('Copying from: [', args[0], '] zipping to: [', tozip,']')
+    zip_to(get_special_paths(args[0]),tozip)
+    sys.exit(1)
 
   if len(args) == 0:
-    print "error: must specify one or more dirs"
+    print("error: must specify one or more dirs")
     sys.exit(1)
 
   # +++your code here+++
