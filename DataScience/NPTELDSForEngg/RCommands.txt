@@ -1,0 +1,9 @@
+########### List of commands used in R ########### 
+
+Ctrl + L - Clears the console
+rm(variable name) - Removes the variable from the environment
+rm(list=ls()) - Removes all the variables from the environment
+save(a,file="sess1.Rdata") - Saves the single variable "a" to the specified file
+save(list=ls(all.names=TRUE),file="sess1.Rdata") - Saves the full workspace to the specifies file
+save.image() - Shortcut to save the full workspace
+load(file="sess1.Rdata") - Loads the saved workspace
