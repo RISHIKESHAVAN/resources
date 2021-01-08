@@ -7,3 +7,29 @@ save(a,file="sess1.Rdata") - Saves the single variable "a" to the specified file
 save(list=ls(all.names=TRUE),file="sess1.Rdata") - Saves the full workspace to the specifies file
 save.image() - Shortcut to save the full workspace
 load(file="sess1.Rdata") - Loads the saved workspace
+typeof(object) - Returns the data type of the object
+is.<data_type>(object) - Returns TRUE or FALSE depending on whether the object is of the mentioned data type
+as.<data_type>(object) - Converts the object to the mentioned data type
+c() - Creates a vector of the specified elements
+list() - Creates a list of the specified elements
+list("a1"=a, "b1"=b) - Creates a list of elements with specific names
+list$a1 - Gives the element with with the name a1 in the list 
+list[[1]] - Returns the first component from the list
+list[[1]][1] - Returns the first element from the first component from the list
+c(list1,list2) - Concatenates the two lists
+data.frame(v1,v2,v3) - Creates a df with the values of the params as column data and 'v1','v2','v3' as column names.
+read.table(path="Path of file",sep) - Creates a df from a file
+df[r,c] - Select specific elements in the dataframe
+subset(df,Name=='Senthil'|Age>20) - Returns the subset of 'df' that satisfy the conditions
+df[[2]] - Returns the 2nd column
+df[[2]][3] - Returns the element at the intersection of 2nd column and 3rd row
+rbind(df,data.frame(snum=4,name='Raj',age=26)) - Returns the df with the added row to the existing 'df'. sn,name,age are the column names.
+cbind(df, col4=c(10,20,30,40)) - Returns the df with the added column to the existing 'df'.
+df[-3,-1] - Returns the df with 3rd row and 1st col deleted
+df[,!names(df) %in% c(“vec3”)] - (! -> not) Returns the df with the cols that satisfy the condition
+df[!df$vec1==3,] - Returns the df after removing the rows according to the condition
+melt(data, id.vars, measure.vars, variable.name = "variable", value.name = "value") - Returns the melted df based on the identifier vars and measurement vars
+dcast(data, formula, value.var = <col with values>) - This function is specific to cast a dataframe
+recast(data, formula, id.var, measure.var) - Melt + Cast in a single function
+mutate(df,new_var=<any function involving the old vars>) - Add a new var to a df based on the existing vars
+function(dataframe1, dataframe2, by=id.variable) - To combine 2 dfs. 'function' can vary
