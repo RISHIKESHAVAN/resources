@@ -109,3 +109,65 @@ __Dataframe__ :
 ____
 
 ### __1.3 Arithmetic, Logical and Matrix Operations__
+
+Arithmetic operations in R:
+| Symbol | Operation |
+|---|---|
+| =, <- | Assignment |
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+| ^, ** | Exponent |
+| %% | Remainder |
+| %/% | Integer Division |
+
+Hierarchy of operations:
+
+| Order of Precedence | Operation |
+|---|---|
+| Bracket | () |
+| Exponent | ^, ** |
+| Division | / |
+| Multiplication | * |
+| Addition and Subtraction | +, - |
+
+Various Logical operators are available in R.
+
+__Matrices__ :
+
++ Rectangular arrangement of numbers in rows and columns.
++ A matrix can be created using `matrix(c(1,2,3,4,5,6,7,8,9),nrow=3.ncol=3,byrow=TRUE)`. By default, the `byrow` param is FALSE.
++ `matrix(3,m,n)` creates a matrix with `m` rows and `n` cols and all the elements as `3`. The function `diag(k,m,n)` creates a diagnol matrix with the specified elements for `k`. An identity matrix can be created by specifying `k` as 1.
+
+__Matrix metrics__ :
+
++ `dim(A)` will return the size of the matrix
++ `nrow(A)` will return the number of rows
++ `ncol(A)` will return the number ofcolumns
++ `prod(dim(A))` or `length(A)` will return the number of elements
+
+__Accessing, editing, deleting in elements in matrices__ :
+
++ Same convention as dataframes.
++ Strings can be assigned as names of rows and columns using: `rownames()` and `colnames()`.
++ `A[m,n]` - Array/value before “,” for accessing rows and Array/value before “," for accessing columns. A single column can be accessed be leaving the row part empty as `A[,n]`. Same can be applied for accessing entire rows.
++ Using ‘-’ for removes rows/columns (i.e) `A[,-2]` returns the entire matrix without only the 2nd column. Same for rows.
++ `A[c(1,3),c(2,4)]` - selects the 1st row, 3rd row and 2nd col, 4th col. `A[1:3,2:4]` - selects 1st to 3rd row (inclusive) and 2nd to 4th col (inclusive)
+
+__Matrix Concatenation__:
+
++ Refers to merging of a row or column to a matrix
++ `rbind()` concatenates a row to the matrix and `cbind()` concatenates a column to the matrix
++ Consistency of the dimensions between the matrix and the vector should be checked before concatenation.
+
+__Matrix Algebra__:
+| Symbol | Operation |
+|---|---|
+| A+B | Element wise addition |
+| A-B | Element wise subtraction |
+| A*B | Element wise multiplication |
+| A%*%B | Normal multiplication |
+| A/B | Element wise division (NOT inverse of matrix) |
+
+____
