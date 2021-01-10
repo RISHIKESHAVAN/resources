@@ -171,3 +171,149 @@ __Matrix Algebra__:
 | A/B | Element wise division (NOT inverse of matrix) |
 
 ____
+
+### __1.4 Advanced programming in R__
+
+__Functions__:
+
++ Created using the `function()`. Basic syntax is as follows:
+
+```R
+f = function(args) {
+  <valid R statements>
+}
+```
+
++ In the above segment, `f` is the function name.
++ Once the function is written and saved to a file, it has to be loaded into R so that the function can be used. The file can be loaded either by the command `source('~/R/R-Workspace/**.R')` or by clicking on the __Source__ button. Clicking the “Source” button will not execute the function, it will only load the function file. Have to load the function file every time when you clear the console, restart R or make changes in the function file.
++ Generally, the argument values are passed in the same order. Argument names can be used to pass the values in any order. If the argument values are not passed, then the default values (if provided) are used.
++ Functions are __lazily evaluated__, which means that if some arguments are missing, the function is still executed as long as the execution doesn’t involve these arguments
++ MIMO - Multiple Inputs Multiple Outputs
++ Functions in R generally return only a single output. But this is not a limitation as functions can return a list of multiple object.
+
+```R
+f_mimo = function(args) {
+  <valid R statements>
+  result = list("output1"=op1, "output2"=op2)
+  return (result)
+}
+
+# Load the function and then call it
+f_res = f_mimo(args)
+
+# The various objects of the output can be accessed using the names
+f_res["output1"] # returns op1
+f_res["output2"] # returns op2
+```
+
+__Inline Functions__:
+
++ Sometimes we need only very small functions and creating a file for it and loading it is too much work. We use inline functions for this case.
+
+```R
+# The following is an inline function
+fun = function(x) x^2+x*8-1
+
+# It can be called by just passing the argument
+fun(1) # returns 8
+fun(7) # returns 104
+```
+
+__Looping Functions__:
+
++ `apply()` - Apply a function over the margins of an array or matrix. Here, margins refer to the dimension of the array along which the function need to be applied.
+
+```R
+# Create a matrix
+A = matrix(1:9, 3, 3)
+
+# Applies the "sum" function row-wise (margin=1) and returns the sum of all the elements in each row
+apply(A,1,sum) # returns 12 15 18
+
+# Applies the "sum" function column-wise (margin=2) and returns the sum of all the elements in each column
+apply(A,2,sum) # returns 6 15 24
+```
+
++ `lapply()` - Apply a function over a list or a vector. It always returns a list of the same length as the input list.
+
+```R
+mylist = list("Hi", "there")
+char_count = lapply(mylist, nchar)
+char_count # returns a list of [2, 5]
+```
+
++ `mapply()` - Multivariate version of lapply(). It is used to apply a function over several lists simultaneously (i.e), the first element of each list is passed as args to the fun in the fist loop, then the second element and so on. Therefore, the number of lists passed must be equal to the number of args required for the function.
+
+```R
+# defining an inline function
+rect_area = function(l,b) l*b
+
+lengths = list(2 , 3)
+breadths = list(4, 5)
+areas = mapply(rect_area, lengths, breadths)
+areas # returns a list of [8, 15]
+```
+
++ `tapply()` - Apply a function over a subset of vectors given by a combination of factors.
+
+```R
+id = c(1,1,1,2,2,2,3,3,3)
+vals = c(1,2,3,4,5,6,7,8,9)
+
+# Now, we want to find the sum of vals with same ids. Thus, here the elements of the id vector acts as "factors" and is passed to tapply() along with the vals vector and the function to be used.
+tapply(vals,id,sum) # prints the categories and the respective results
+# 1   2   3
+# 6  15  24
+```
+
+____
+
+### __1.5 Control Structures__
+
+There are 2 main classifiers for control structures:
+
++ Execute a command only when certain conditions are satisfied. (eg) `if-then-else`
++ Execute a command repeatedly and use a certain logic to stop the iteration. (eg) `for` and `while` loops
+
+__if-else constructs__:
+
+```R
+if (condition) {
+  statements
+} else if(condition) {
+  alternate statements
+} else {
+  alternate statements
+}
+```
+
+__for loop__:
+
++ A sequence is one of the components of a ‘for loop’. It creates equi-spaced points between ‘from’ and ‘to’
+
+```R
+seq(from=1, to=10, by=3) # returns 1 4 7 10
+seq(from=1, to=10, length=4) # returns 1 4 7 10
+```
+
++ A for loop consists of: a ‘sequence’ which could be a vector or a list, an ‘iter’ which is an element of the sequence and statements.
+
+```R
+for(i in seq(1,5,by=1)) {
+  print(str(i+1))
+}
+```
+
++ A `break` statemen exits the current iteration even before it is complete. If there is only one for loop then the entire loop is stopped when `break` is executed. In nested loops, the innermost loop is exited whenever `break` is executed but the outer loop continues with the successive iterations.
+
+__while loop__:
+
++ Statements are executed until a condition is rendered FALSE.
+
+```R
+while(condition) {
+  statements
+}
+```
+
+____
