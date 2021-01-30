@@ -4,7 +4,7 @@
 
 ### __1.1 Introduction to R__
 
-__R__ is an open source programming language that is widely used asa statistical software and data analysis tool. __RStudio__ is an integrated development environment for R.
+__R__ is an open source programming language that is widely used as a statistical software and data analysis tool. __RStudio__ is an integrated development environment for R.
 
 Components in R Studio:
 
@@ -17,7 +17,7 @@ Opening a script file adds a new __Scripts__ pane to the interface.
 The _working directory_ can be set via two ways:
 
 + From console using the command: `setwd("<directorypath>")`
-+ From the GUI: Files tab -> Change to the required dir -> More Options -> Set as working directory.
++ From the GUI: _Files tab -> Change to the required dir -> More Options -> Set as working directory_.
 
 Running the script commands can be done in the following ways:
 
@@ -25,7 +25,7 @@ Running the script commands can be done in the following ways:
 + __Source__ runs the entire script printing only the output which we want to print
 + __Source with Echo__ runs the entire script and prints the commands as well as the output
 
-Lines can be commented using the "__#__" symbol.
+Lines can be individually commented using the `#` symbol or `Ctrl+C` for multiple lines.
 
 The  console can be cleared using "__Ctrl + L__". Clearing the console will not remove the variables from the workspace.
 
@@ -46,7 +46,7 @@ ____
 
 Rules for naming variables:
 
-+ Only alphanumeric characters, _ (underscoreand), . (period) are allowed.
++ Only alphanumeric characters, _ (underscore) and . (period) are allowed.
 + Always start with an alphabet.
 
 Predefined constants in R:
@@ -86,7 +86,7 @@ __Vector__ :
 + All components of the list can be named and the components can be accessed using their names as `<list>$<comp name>`
 + Components can also be accessed using indices. The top level components can be acccessed using `[[]]` and the inner elements of the components using `[]`
 + The list can also be modified by accessing the components and replacing them.
-+ Two lists can also be concatenated using `c(list1,list2)`. Here, each component of the `list2` becomes a component of `list1`. To add a an entire list to a particular index in `list1`, it can be done as `list[[4]] = list2`
++ Two lists can also be concatenated using `c(list1,list2)`. Here, each component of the `list2` becomes a component of `list1`. To add a an entire list to a particular index in `list1`, it can be done as `list1[[4]] = list2`
 
 __Dataframe__ :
 
