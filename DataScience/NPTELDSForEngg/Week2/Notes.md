@@ -1,8 +1,8 @@
 # __Data Science for Engineers__
 
-## __Week 2__
+## __Week 2 - Linear Algebra__
 
-### __2.1 Linear Algebra__
+### __2.1 Linear Equations__
 
 Linear Algebra is useful for the following:
 
@@ -148,3 +148,71 @@ __Generalization__:
 + The concept used to generalize the solutions is called the __Moore-Penrose Pseudo-Inverse of a Matrix__. The pseudo inverse is used as follows: if we have a set of equations in the form Ax = b, the solution is given by __x = A<sup>+</sup>b__. A<sup>+</sup> is the symbol _we_ use to denote pseudo inverse of A.
 + __Singular Value Decomposition__ is one of the many techniques that can be used to calculate the pseudo inverse or generalized inverse
 + The pseudo inverse is calculated using the `ginv()` function from the `MASS` library in R. Whatever be the sizes of the matrices A and b, we can use the same `ginv()` to get the solution. But what is important is the interpretation of the solution. Whether it is the case of m < n or m > n, just using `ginv()` will give the solution. But the interpretation is that, in case of m > n, the solution is the one that minimizes the error (least squares) and in case of m < n, the solution is the one that is closest to the origin (minimum norm solution).
+
+---
+
+### __2.2 Distance,Hyperplanes and Halfspaces,Eigenvalues,Eigenvectors__
+
++ Till now we were viewing X = [x1 x2] as a set of variables for which we were trying to calcualte the possible solutions. But this x can also take up __geometric views__.
++ X = [x1 x2] can be viewed as a point in the 2D space with axes X1 and X2 and x1 and x2 being the distances along the respective axes. 3 x values would make it a point in the 3D space and so on.
++ X can also be viewed as a vector between the origin and the data point. The __length__ (__magnitude__) of this vector is given by: __|X| = sqrt(x1<sup>2</sup>+x2<sup>2</sup>)__
++ Geometric concepts are easier to visualize in 2D or 3D and difficult to do so in higher dimensions. However, the fundamental mathematics remains the same irrespective of the dimensions of the vector.
++ In the scenario of 2 points in the 2D space: X1 = [x1<sup>1</sup> x2<sup>1</sup>], X2 = [x1<sup>2</sup> x2<sup>2</sup>]. The distance between these two can be calculated as: __l = |X2-X1|<sub>2</sub>__. This becomes l = sqrt((x1<sup>2</sup> - x1<sup>1</sup>)<sup>2</sup> + (x2<sup>2</sup> - x2<sup>1</sup>)<sup>2</sup>) = sqrt((X2 - X1)<sup>T</sup>(X2 - X1)).
+
+__Unit vectors__:
+
++ It is a vector with magnitude 1 (distance from the origin). __a^ = A/|A|__
++ Unit vectors are used to definde directions in the coordinate system.
++ Any vector can be written as a product of a unit vector and a scalar magnitude
+
+__Orthogonal Vectors__:
+
++ Two vectors are said to be orthogonal if their __dot product__ (scalar product) is 0.
++ The dot product of two vectors A and B is given by: __A.B = Ʃ<sup>n</sup><sub>i=1</sub>a<sub>i</sub>b<sub>i</sub>__. This can also be written as __A<sup>T</sup>B__.
+
+__Orthonormal Vectors__:
+
++ Orthonormal vectors are orthogonal vectors with unit magnitude.
++ So what we can do is, we can take orthogonal vectors and get the unit vectors for them using A/|A|. The unit vectors of orthogonal vectors will still be orthogonal because all we are doing is just divide the vector with a scalar constant. These unit vectors are orthonormal vectors.
++ All orthonormal vectors are orthogonal.
+
+__Basis Vectors__ :
+
++ Basis vectors are set of vectors that are __independent__ and __span the space__.
++ Consider a 2D space R<sup>2</sup> (the superset 2 here means that each vector in the this space has 2 components and thus '2D'). There would be infinite number of vectors in it. If there is any set of vectors such that, all the vectors in the 2D space can be shown as a linear combination of those set of vectors, then those set of vectors form a basis for all the vectors in the 2D space. Those set of vectors are called the __basis vectors__. Most importantly, all the basis vectors must be independent. This is because we want each of the basis vectors to provide unique information. So, we dont want any of them to be dependent on any of the other basis vectors.
++ Basis vectors are __not__ unique. We can find many many sets of basis vectors all of which share the same property.
++ We __cannot__ have 2 basis sets with different number of vectors in them (i.e.) while we could have many sets of basis vectors,all of them being equivalent, the number of vectors in each set will be the same.
++ It is __not__ necessary that the basis set must have the same number of vectors in them as the number of components in space vectors (i.e.) the vectors in the _2D sub-space_ of R<sup>4</sup> could  have a basis set with only 2 vectors (of size 4). However, if we take every vector in R<sup>4</sup>, then we would need 4 basis vectors to explain all of them.
++ This can also be interpreted as: "Since a collection of vectors in the R<sup>4</sup> space can be explained using just 2 basis vectors (instead of 4), it means that the collection of vectors fall on a '2D' sub-space of the R<sup>4</sup> space". This is an important concept of sub-space from a data science perspective.
+
+__Finding basis vectors__:
+
++ For the collection of vectors in a space, the number of basis vectors is given by the rank of the matrix formed by arranging all the vectors as columns. This is because, the rank gives the number of linearly independent columns (vectors in this case) and all the other columns (vectors) can be explained as a linear combination of these columns (vectors).
++ Once we have the number of independent vectors, choosing them is easy. We can pick any of the {rank number of} linearly independent vectors from the matrix above as the basis vectors.
+
+__Representation of line and plane__:
+
++ Single equation (ax1 + bx2 + c = 0) in 2D space represents a line. 2 equations in 2 variables represent a point if the equations are solvable together.
++ If you have no relationships between these variables, then we would say that we are representing all the points in the 2-D space and there is no relationship that constraints these points to either lie on a line or be a single point and so on.
++ Now rewriting the equation ax1 + bx2 + c = 0 in a form that is generally used: __n<sup>T</sup>X + b = 0__. n is the column vector [a b], X is a vector of variables [x1 x2]
+
+![lineimg](lineandplane1.png)
+
++ In the image, the n vector is shown orthogonal to the line. Why?
++ The points X1 and X2 are on the line. So substituting them in the general form we get, _n<sup>T</sup>X1 + b = 0_ and _n<sup>T</sup>X2 + b = 0_. Subtracting both, _n<sup>T</sup>(X2 - X1) = 0_.
++ Here, by vector addition, (X2 - X1) is in the direction of the line joining the 2 points on the image. From orthogonality we saw that if a<sup>T</sup>b = 0, then a and b are orthogonal. Thus, n is orthogonal to (X2 - X1).
++ Now, extending to 3D space, single equation (n<sup>T</sup>X + b = 0) in 3D space represents a plane. Similar to n representing a line in the 2D space, in 3D it would represent a vector. 2 equations in a 3D space represent a line and 3 equations represent a point as long as the 3 equations are consistent and solvable.
+
+__Projections__ (Mathematical approach):
+
++ v1 and v2 (v pronounced as nu) are the basis vectors of the plane.
+
+![projecitonsimg](projections1.png)
+
++ The vector X is coming out of the plane. So, from the data science viewpoint if you want to make an analogy as "I have a data here X which is represented by this vector. I want to write this simply as only a function of v1 and v2". But we can't do it exactly since it is projecting out of the plane.
++ So the next best thing is to project the vector on to the plane. But since there are many vectors on the plane, we need to find the best possible projection. This would be the point on the plane such that the distance between the point and the tip of the vector X is minimized. This would be the line that is _perpendicular_ to the plane and touching the tip of the vector X and is shown as 'n' in the image and the projected vector is shown as X^.
++ We can define the projection (X^) of a vector (X) on to a lower dimension (2D in the picture) mathematically as: __X^ = c1v1 + c1v2__ (v -> nu) (This is from the concept of basis vectors. Since v1 and v2 are the basis vectors, X^ can given as the linear combination of those vectors). Here, c1 and c2 are unknown.
++ By vector addition, X = X^ + n. Therefore, __X = c1v1 + c1v2 + n__. Here, the fact that we are using the porjection X^ comes from n being perpendicular to the plane. Since, n is perpendicular to the plane, n<sup>T</sup>v1 = v1<sup>T</sup>n = 0; n<sup>T</sup>v2 = v2<sup>T</sup>n = 0.
++ We solve v1<sup>T</sup>n = 0 and X = c1v1 + c1v2 + n by subsituting values from one eqn to the other. We have 2 scenarios while solving them:
+  + If the projections are onto __general orthogonal directions__ (2 in this case), then v1<sup>T</sup>v2 = 0. Then we will get __c1 = v1<sup>T</sup>X/v1<sup>T</sup>v1__. Using the same idea and solving for v2<sup>T</sup>n = 0 would result in __c2 = v2<sup>T</sup>X/v2<sup>T</sup>v2__. We can subsitute these values of c1 and c2 onto the equation X^ = c1v1 + c1v2 and find the value of the projection (Importantly, first check if the v1 and v2 are orthogonal. Only then this formula can be applied.). This can be extended to 3, 4,... orthogonal directions.
+  + The second scenario is to project them in certain number of directions that are not orthogonal. We will try to generalise them so that it can be used in many places. Consider the problem of projecting X (as X^) onto a space spanned by k linearly independent vectors (non orthogonal). Because this X^ is in a space spanned by the k linearly independent vectors, we can write X^ as a linear combination of these k vectors: X^ = Ʃ<sup>k</sup><sub>j=1</sub>cjvj. This can also be written as X^ = [v1....vk][c1....ck]<sup>T</sup> = Vc, where V = [v1....vk] and c = [c1....ck]<sup>T</sup>. V is of dimension (nxk) and c is of dimension (kx1). Therefore X^ will be of dimension (nx1). Using the orthogonality idea, n is perpendicular to the space spanned by the k linearly independent vectors (i.e.) V<sup>T</sup>n = V<sup>T</sup>(X - X^) = V<sup>T</sup>(X - Vc) = 0 (Here, V is the matrix of all the basis vectors - v). Solving this finally gives, __X^ = V(V<sup>T</sup>V)<sup>-1</sup>V<sup>T</sup>X__. [_Whenever we take inverses, we have to always make sure that the inverse first exists. Here, the v vectors are already taken to be linearly independent and thus the columns of (V<sup>T</sup>V) will be linearly independent. This ensures that the inverse of (V<sup>T</sup>V) exists_]. This is the formula for projections in general directions.  
