@@ -192,8 +192,7 @@ __Finding basis vectors__:
 
 __Representation of line and plane__:
 
-+ Single equation (ax1 + bx2 + c = 0) in 2D space represents a line. 2 equations in 2 variables represent a point if the equations are solvable together.
-+ If you have no relationships between these variables, then we would say that we are representing all the points in the 2-D space and there is no relationship that constraints these points to either lie on a line or be a single point and so on.
++ Single equation (ax1 + bx2 + c = 0) in 2D space represents a line. 2 equations in 2 variables represent a point if the equations are solvable together. If you have no relationships between these variables, then we would say that we are representing all the points in the 2-D space and there is no relationship that constraints these points to either lie on a line or be a single point and so on.
 + Now rewriting the equation ax1 + bx2 + c = 0 in a form that is generally used: __n<sup>T</sup>X + b = 0__. n is the column vector [a b], X is a vector of variables [x1 x2]
 
 ![lineimg](lineandplane1.png)
@@ -216,3 +215,75 @@ __Projections__ (Mathematical approach):
 + We solve v1<sup>T</sup>n = 0 and X = c1v1 + c1v2 + n by subsituting values from one eqn to the other. We have 2 scenarios while solving them:
   + If the projections are onto __general orthogonal directions__ (2 in this case), then v1<sup>T</sup>v2 = 0. Then we will get __c1 = v1<sup>T</sup>X/v1<sup>T</sup>v1__. Using the same idea and solving for v2<sup>T</sup>n = 0 would result in __c2 = v2<sup>T</sup>X/v2<sup>T</sup>v2__. We can subsitute these values of c1 and c2 onto the equation X^ = c1v1 + c1v2 and find the value of the projection (Importantly, first check if the v1 and v2 are orthogonal. Only then this formula can be applied.). This can be extended to 3, 4,... orthogonal directions.
   + The second scenario is to project them in certain number of directions that are not orthogonal. We will try to generalise them so that it can be used in many places. Consider the problem of projecting X (as X^) onto a space spanned by k linearly independent vectors (non orthogonal). Because this X^ is in a space spanned by the k linearly independent vectors, we can write X^ as a linear combination of these k vectors: X^ = Ʃ<sup>k</sup><sub>j=1</sub>cjvj. This can also be written as X^ = [v1....vk][c1....ck]<sup>T</sup> = Vc, where V = [v1....vk] and c = [c1....ck]<sup>T</sup>. V is of dimension (nxk) and c is of dimension (kx1). Therefore X^ will be of dimension (nx1). Using the orthogonality idea, n is perpendicular to the space spanned by the k linearly independent vectors (i.e.) V<sup>T</sup>n = V<sup>T</sup>(X - X^) = V<sup>T</sup>(X - Vc) = 0 (Here, V is the matrix of all the basis vectors - v). Solving this finally gives, __X^ = V(V<sup>T</sup>V)<sup>-1</sup>V<sup>T</sup>X__. [_Whenever we take inverses, we have to always make sure that the inverse first exists. Here, the v vectors are already taken to be linearly independent and thus the columns of (V<sup>T</sup>V) will be linearly independent. This ensures that the inverse of (V<sup>T</sup>V) exists_]. This is the formula for projections in general directions.  
+
+__Hyperplane__:
+
++ Hyperplane is a geometric entity whose dimensions is one less than that of its ambient space. Example: hyperplanes for a 3D space are 2D planes and hyperplanes for a 2D space are 1D lines and so on.
++ The hyperplane is usually described by an equation as: __X<sup>T</sup>n + b = 0__ (i.e.) in 2D space the equation of the hyperplane will be as x1n1 + x2n2 + b = 0 and this represents a line.
++ Hyperplanes in general are not subspaces; however, if we have hyperplanes of the form __X<sup>T</sup>n = 0__; (i.e.) if the plane goes through the origin, then an hyperplane also becomes a subspace.
+
+__Halfspaces__:
+
+![halfspace2d](halfspace1.png)
+
++ We have a 2D space in the image. As discussed before, an equation in a 2D space would be a line - which would be a hyperplane. The equation of the line is given by X<sup>T</sup>n + b = 0 and in this space it can be written as x1n1 + x2n2 + b = 0.
++ In reality, the line extends on the both the ends. And when it does that, it splits the whole 2D space into two spaces, one on eithere side of the line. These 2 spaces are called the __halfspaces__.
++ Now we are interested to know if there is some characteristic that separates the points on one halfspace from the points on the other halfspace. This is an important question in solving _classification problems_.
++ In a specific classification problem called the _binary classisfication problem_, we draw a line to between the two classes to segregate them into two halfspaces. We would like if there is some characteristic that holds to one particular side of the line so that we could use that characteristic as a discriminant function for doing this binary classification problem. This is the data science perspective to the halfspaces.
+
+![halfspace2d](halfspace2.png)
+
++ Now, we would like to know the position of any particular point (i.e.) whether the point is on the line or on any one of the halfspace.
++ (After a couple of algebraic manipulations and proofs) it can be shown that:
+  + X<sup>T</sup>n + b = 0 ∀ X ∈ line (X1)
+  + X<sup>T</sup>n + b > 0 ∀ X ∈ subspace in the direction of the vector 'n' (X3)
+  + X<sup>T</sup>n + b < 0 ∀ X ∈ subspace in the direction of the vector '-n' (X2)
++ To explain this with an example: Consider a 2D space with n = [1 3] _(it is a column vector)_ and b = 4.
+  + The solution: So, X = [x1 x2] _(it is a column vector)_. And the equation as we have seen already is: X<sup>T</sup>n + b = 0. Substituting X, n and b we get: _x1 + 3x2 + 4 = 0_. Now consider a point (-1,-1). Putting them in the equation, we get 0. Thus this point lies _on the line_. Consider another point (1,-1). Substituting them in the equation gives 2 which is > 0. Thus, this point lies in the _positive halfspace_ and similarly the point (1,-2) lies on the _negative halfspace_.
+
+__Eigen values and Eigen vectors__:
+
++ We have previously seen linear equations of the form: __Ax = b__ (Here, A is of size (nxn) and is of size (nx1)). This can be interpreted as: "When vector _x_ is operated on by _A_, we obtain a new vector _b_ with a different orientation.
++ Now we we ask the following question: Are there directions (x) for a matrix A such that when the matrix operates on these directions, they maintain their orientation save for multiplication by a scalar(+ve or -ve) (i.e.) __Ax = λx__ - here we can see that the vector _x_ remains the same on both the sides and it is only multiplied by a scalar(λ). The constant λ (positive) represents the amount of stretch (if λ>1) or shrinkage (if λ<1) the atributes of _x_ go through in the _x_ direction. If λ is negative then the vector will be in the exact opposite direction without changing the orientation.
++ The solutions x are called the __eigenvectors__ and their corresponding λ are called the __eigenvalues__.
++ So now the question is, does every matrix have eigenvectors? If yes, how do we compute them and the eigenvalues? We can find the eigenvalues as follows: Ax = λx. This can be written as Ax - λIx = 0. Therefore, (A - λI)x = 0.
++ Thus the eigenvalues of the equation can be identified using: __|A = λI| = 0__. Once the eigenvalues are identified, subsituting them in the original equation - Ax = λx - will help us identify the solutions for eigenvectors x.
++ The R code for finding the eigenvalues is as follows:
+
+```r
+A = matrix(c(8,7,2,3),2,2,byrow=TRUE)
+ev = eigen(A)
+values = ev$values
+values
+# gives the output as [10 1].
+# These are the two eigenvalues.
+
+# The eigen vectors are then subsituted in the equation Ax = λx
+# one by one and the corresponding eigenvectors are found.
+```
+
+__Important note__: _Irrespective of the values in the matrix, the solution for an eigen problem could either be real or complex depending on the polynomial you end up with._
+
+---
+
+### __2.3 Connections between eigenvectors, column space and null space__
+
++ We know that eigenvalues can be complex even for real matrices. When eigenvalues become complex, eigenvectors also become complex. Also, when some of eigenvalues are repeated, the eigenvectors corresponding to those eigenvalues may either by independent or not. So, finding n linearly independent eigenvectors is not always guaranteed for any general matrix
++ However, if the __matrix is symmetric__ (i.e. A = A<sup>T</sup>), then the __eigenvalues are always real__. As a result, the __eigenvectors are always real__. Further, there will always be __n linearly independent eigenvectors__ for symmetric matrices irrespective of the number of times the eigenvalues are repeated.
++ Symmetric matrices of type AA<sup>T</sup> or A<sup>T</sup>A are often encountered in data science. Eigenvalues of matrices of the form __AA<sup>T</sup> or A<sup>T</sup>A__ while being __real are also non-negative__.
+
+What is the connection between eigenvectors and the column space and the null space of a (symmetric) matrix?
+
+The following result is true whether the matrix is symmetric or not:
+
++ From the eigenvalue equation we know that Av = λv. Now,what happens if the eigenvalues become zero (i.e.) Av = 0? Here, v (nu) is the eigenvector corresponding to the eigenvalue 0. Comparing Av = 0 with the null space equation Aβ = 0, we can say that: __The eigenvectors corresponding to the zero eigenvalues are in the null space of the matrix__. Conversely, if the eigevalue corresponding to the eigenvector is not zero, then the eigenvector cannot be in the null space. Thus, if none of the eigenvalues are zero, then it means that the matrix is full rank and I can never solve Av = 0 and get non-trivial solution.
+
+The following result is true for symmetric matrices:
+
++ Consider a symmetric matrix A(nxn) with n real eigenvalues. Lets assume that r of these eigencalues are 0. Therefore, there are n-r non-zero eigenvalues.
++ From what we say earlier, we know that the eigenvectors corresponding to the r eigenvalues are in the null space. This means that the dimension of the null space is r.
++ So, from rank-nullity theorem, the rank of A is = n-r. This basically means that there are (n-r) independent vectors in the columns of the matrix.
++ Now, we could ask what could be a basis set for this column space? Or what could be the (n-r) independent vectors that we can use as the columns subspace?
++ It is possible to prove that: The (n-r) eigenvectors are a linear combination of the columns of A. We also know that the dimension of the column space is n-r. This implies that the eigenvectors corresponding to the non-zero eigenvalues form a basis for the column space.
+
+---
