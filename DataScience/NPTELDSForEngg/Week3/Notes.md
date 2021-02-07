@@ -98,6 +98,34 @@ __Binomial Mass Function__ :
 
 + The equation is a PMF characterized by a single parameter _p_.
 
-![bmfgraph](BinomialMassFunctionGraph.gif)
+![bmfgraph](BinomialMassFunctionGraph.GIF)
 
 + For large _n_ it tends to be a _Gaussian distribution_ - bell shaped curve. For computational purposes, for large values of n we use the Gaussian distribution instead of the Binomial distribution.
+
+The Binomial Mass Function was a PMF of a Discrete RV. The following is for a Continuous RV.
+
+__Gaussian or Normal Density Function__ :
+
++ Used to characterize random errors in data. The density function is given as follows:
+
+![ndf](NormalDensityFunction.gif)
+
++ This is a PDF characterized by 2 parameters: _μ_ and _σ_
++ It is a bell shaped curve.
+
+![ndfgraph](NormalDensityFunctionGraph.GIF)
+
++ The curve is symmetric.
++ A particular case of μ = 0 and σ = 1 is called __Standard Normal Distribution__.
+
+__Chi-square Density Function__ :
+
+![csdf](ChiSquareDensityFunction.gif)
+
++ Density is characterized by a parameter _n_ - Degrees of freedom.
+
+![csdfgraph](ChiSquareDensityFunctionGraph.GIF)
+
++ As seen from the graph, the RV that follows the chi-squared distributions can have values only between 0 and ∞. The probability to have -ve values is exactly 0.
++ This distribution arises when you _square a standard normal variable_. So, the square of a standard normal variable will be a chi-square distribution with one degree of freedom. If you take n independent standard normal variables and square and add all of them that will result in a chi-square distribution with n degrees of freedom.
++ Distribution of a Sample Variance follows a chi-square distribution.
