@@ -65,3 +65,39 @@ __Conditional Probability__ :
   + __P(B|A) = P(A ∩ B)/P(A)__, if P(A) > 0
   + From the above rule, we can derive the __Bayes rule__: __P(A|B)P(B) = P(B|A)P(A)__
   + __P(A) = P(A|B)P(B) + P(A|B<sup>c</sup>)P(B<sup>c</sup>)__
+
+___
+
+### __3.2 Random Variables, PMF and PDF__
+
+__Random Variable__ :
+
++ A RV is a function which maps the outcomes of a sample space to a real line. So, there is a unique real number that is associated to every outcome in the sample space.
++ Why do we need a RV? Consider the coin toss example. The Sample space is: {H, T}. Unfortunately, we will not be able to do numerical computations with such a representation. Therefore we map these outcomes to two points on a real line: H -> 0 and T -> 1. A Random Variable or function maps the outcomes to a real line. If the outcomes of a random phenomena are already numbers (like in the case of rolling a dice), then we don't need this mapping and can work with the outcomes themselves.
++ __Discrete RV__ (throw of a dice or coin); __Continuous RV__ (sensor readings, time interval between failures)
+
+__Probability Mass/Density Functions__ :
+
++ A probability mass or a density function is a measure that maps the outcomes of a RV to values between 0 and 1.
++ For a _discrete RV_, the __PMF__ assigns a probability to every outcome in a sample space.
+  + Sample space of RV(x) for a coin toss: [0, 1]
+  + P(x = 0) = 0.5; P(x = 1) = 0.5
++ For a _continuous RV_, the __PDF__ _f(x)_ can be used to compute the probability for every outcome of the RV within an interval.
+  + In the case of a continuous RV, there will be infinity of outcomes, and therefore we can associate a probability with every outcome. However, we can associate a probability that the random variable lies within some _finite interval_.
+  + Consider a RV x which can take any value in the real line from [-∞, ∞], then we define the __density function f(x)__ such that the probability that the RV lies in an interval [a, b] is defined as __P(a < x < b) = ∫<sub>a</sub><sup>b</sup>f(x) dx__. _Integral => Area_ Thus, the area under the curve f(x) in the limits a and b gives the probability.
+  + Also, area under the entire curve = 1 (i.e.) ∫<sub>-∞</sub><sup>∞</sup>f(x) dx = 1
++ __Cumulative Density Function__: denoted by F() and  is the probability that the random variable x lies in the interval -∞ to b for every value of b. __F(b) = P(-∞ < x < b) = ∫<sub>-∞</sub><sup>b</sup>f(x) dx__. If b = -∞, then CDF = 0 and if b = ∞, then CDF = 1. Thus, as b: -∞ -->: ∞, the CDF: 0 --> 1
+
+__Binomial Mass Function__ :
+
++ Wikipedia: _The binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success (with probability p) or failure (with probability q = 1 − p)._
++ Consider a coin toss experiment. What is the probability of obtaining _k_ heads in _n_ coin tosses with _p_ as the probability of obtaining a head in any toss.
++ So, the RV x represents the number of heads obtained out of the n tosses. Therefore, sample space is: [0, 1,...,n]. Each of the outcomes of the sample space has some probability associated with it which is given by:
+
+![bmf](BinomialMassFunction.gif)
+
++ The equation is a PMF characterized by a single parameter _p_.
+
+![bmfgraph](BinomialMassFunctionGraph.gif)
+
++ For large _n_ it tends to be a _Gaussian distribution_ - bell shaped curve. For computational purposes, for large values of n we use the Gaussian distribution instead of the Binomial distribution.
