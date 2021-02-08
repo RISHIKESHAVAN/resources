@@ -110,7 +110,7 @@ __Gaussian or Normal Density Function__ :
 
 ![ndf](NormalDensityFunction.gif)
 
-+ This is a PDF characterized by 2 parameters: _μ_ and _σ_
++ This is a PDF characterized by 2 parameters: _μ_ - the mean and _σ_ - the standard deviation. σ<sup>2</sup> is called the __variance__. Typically σ<sup>2</sup> tells how wide the distribution will be (i.e.) how far the values are spread around the central value μ and μ tells the value at which the density function attains the highest probability.
 + It is a bell shaped curve.
 
 ![ndfgraph](NormalDensityFunctionGraph.GIF)
@@ -129,3 +129,124 @@ __Chi-square Density Function__ :
 + As seen from the graph, the RV that follows the chi-squared distributions can have values only between 0 and ∞. The probability to have -ve values is exactly 0.
 + This distribution arises when you _square a standard normal variable_. So, the square of a standard normal variable will be a chi-square distribution with one degree of freedom. If you take n independent standard normal variables and square and add all of them that will result in a chi-square distribution with n degrees of freedom.
 + Distribution of a Sample Variance follows a chi-square distribution.
+
+The following are some of the properties of these density functions.
+
+__Moments of a PDF__ :
+
++ Similar to describing a function using derivatives, a PDF can be described by its moments. These moments are denoted by the symbol E[(some function)]. _E - expectation_.
+  + For Continuous distributions: __E[x<sup>k</sup>] = ∫<sub>-∞</sub><sup>∞</sup>x<sup>k</sup>f(x) dx__. Here, f(x) is the density function. This is called the Moments of the distribution. If k = 1, then its called the first moment and so on.
+  + For discrete distributions: __E[x<sup>k</sup>] = Σ<sub>i=1</sub><sup>N</sup> x<sub>i</sub> p(x<sub>i</sub>)__. Here, p(x<sub>i</sub>) - the probability of obtaining the outcome x<sub>i</sub>
+  + __Mean__(the first moment): __μ = E[x]__
+  + __Variance__: σ<sup>2</sup> = E[(x - μ)<sup>2</sup>] = __E[x<sup>2</sup>] - μ<sup>2</sup>__. Here, E[x<sup>2</sup>] is the second moment.
+  + Standard deviation = Square root of variance.
+
+__Properties of Gaussian RVs__ :
+
++ For a Gaussian RV x:
+  + __Mean: E[x] = μ__. μ is the first parameter of the distribution.
+  + __Variance: E[(x - μ)<sup>2</sup>] = σ<sup>2</sup>__ which is the second parameter of the distribution.
+  + Symbolically, we can define the Normal Distribution RV x as: __x ~ N(μ, σ<sup>2</sup>)__. Here, N -> Normal distribution, μ, σ<sup>2</sup> -> parameters of the distribution. Thus it represents the entire density function.
+  + Thus for a Standard Gaussian RV __z ~ N(0,1)__
++ If x is a normally distributed RV with μ and σ<sup>2</sup>, then if we take a linear function of this x denoted by _y = ax + b_; where a and b are some constants. Then we can show that y will also have a normal distribution as follows: __y ~ N(aμ+b, a<sup>2</sup>σ<sup>2</sup>)__.
++ This linear transformation can be used to do __Standardization__ where we define: If x ~ N(μ, σ<sup>2</sup>), then we can define a new RV: __z = (x - μ)/σ__ ~ N(0,1). Here, z is a linear transformation or a linear function of x. Therefore, we can apply the previous rule and show that z is a standard normal distributed variable which means it has a mean = 0 and a standard deviation or variance = 1. This process is also known as standardization.
+
+__Computation of probability in R__ :
+
++ Given a value x and asked "What is the probability that this continuous random variable lies between the interval -∞ and X ?". Then we have to calculate P(-∞ < x < X) = ∫<sub>-∞</sub><sup>X</sup>f(x) dx.
++ The function in R for doing this is `pnorm(X, mean, std, 'lower.tail'=TRUE/FALSE)`
+  + _norm_ refers to the distribution and can be replaced by other distributions (chisq, exp, unif)
+  + _X_ is the limit value
+  + _mean_ and _std_ - the parameters of the distribution. In the normal distribution. There are two parameters, but other distributions such as chi-squared may have one parameter, such as the degrees of freedom and exponential distribution will have one parameter such as the lambda and so on.
+  + _lower.tail=TRUE_ (default) to obtain the lower tail probability (i.e.) -∞ to X and _FALSE_ to obtain the upper tail probability (i.e.) X to ∞.
+
+__Other functions in R__ :
+
++ Function to compute X given the probability p:
+  + `qnorm(p, mean, std, 'lower.tail'=TRUE/FALSE)`. When _lower.tail=TRUE_, it will compute X such that ∫<sub>-∞</sub><sup>X</sup>f(x) dx = p
+  + `dnorm()` to compute density function value.
+  + `rnorm()` to generate random numbers from the distribution.
+
+We have seen the distribution of single RV till now.
+
+__Joint PDF of two RV__ :
+
++ Joint pdf of two continuous RVs x and y: f(x,y) is given by: __P(x <=a, y <=b) = ∫<sub>-∞</sub><sup>b</sup>∫<sub>-∞</sub><sup>a</sup> f(x, y) dx dy__. This gives the __volume__ of the function f(x, y).
++ In addition to the variance of x and y, we can also compute the __covariance__ of x and y: __σ<sub>xy</sub> = E[(x - μ<sub>x</sub>)(y - μ<sub>y</sub>)]__
++ The correlation between x and y is the standardized form of covariance: __ρ<sub>xy</sub> = σ<sub>xy</sub>/σ<sub>x</sub>σ<sub>y</sub>__. ρ<sub>xy</sub> varies between -1 and +1 depending on the extent of correlation between x and y
++ Two RVs x and y are uncorrelated if σ<sub>xy</sub> = 0
++ Two RVs x and y are independent if f(x,y) = f(x)f(y) (i.e.) the joint density function of f(x,y) can be written as the product of the individual density functions or marginal density functions of x and y.
+
+__Multivariate Normal Distribution__ :
+
++ From 2 variables to n variables.
++ A vector of RVs: x = [x1 x2 ...... xn]<sup>T</sup>
++ Multivariate Gaussian Distribution: __x ~ N(μ, Σ)__
+  + E[x] = μ : Mean vector
+  + E[(x-μ)(x-μ)<sup>T</sup>] = Σ : Variance-covariance matrix
+
+![multivariatepdf](MultivariateNormalDistPDF.gif)
+
+![covariancematrixstructure](MvNDStructureOfCovarianceMatrix.gif)
+
++ We can see that the covariance matrix is a square matrix with diagonal elements representing the _variance_ of each of the elements of RV vector x and the off-diagonal elements representing the _pair-wise covariance_.
++ We can completely characterize the multivariate normal distribution by specifying this mean vector μ and the covariance matrix Σ.
+
+___
+
+### __3.3 Sample Statistics__
+
+__Need for Sampling__ :
+
++ What is the need for performing statistical analysis when we have already talked about PDFs and so on?
++ Typically, when we are actually doing analysis we do not know the entire sample space. We may also not know all the parameters of the distribution from which the samples are being withdrawn. Typically we actually obtain only a few samples of the total number of available population . So, from this finite sample we have to derive conclusions about the probability density function of the entire population and also infer about the parameters of these distributions. So, the sample or observation set is supposed to be sufficiently representative of the entire sample space.
+
+__Basic Concepts__ :
+
++ __Population__ : Set of all possible outcomes of a random experiment characterized by f(x)
++ __Sample set (realization)__ : Finite set of observations obtained through an experiment
++ __Inference__ : Conclusion derived regarding the population (pdf, parameters) from the sample set.
+  + It is important to note that the inferences made from a sample set is also uncertain since it depends on the sample set which is one of the many possible realizations. Thus we need to provide the confidence intervals associated with these inferences as well.
+
+__Statistical Analysis__ :
+
++ __Descriptive Statistics (Analysis)__ :
+  + __Graphical__ : Organizing and presenting the data (eg. box plots, probability plots)
+  + __Numerical__ : Summarizing the sample set (eg. mean, mode, range, variance, moment)
++ __Inferential Statistics__ :
+  + __Estimation__ : Estimate parameters of the pdf along with its confidence region.
+  + __Hypothesis testing__ : Making judgements about f(x) and its parameters.
+
+Some of the summary statistics that we can define for a sample are as follows:
+
+__Measures of Central Tendency__ :
+
++ They are kind of the centre point of the entire sample.
++ The following represent the sample set by a single value
++ __Mean (or average) x̄__: (Sum of all data points)/(Number of data points)
+  + Best estimate in _least square criterion_
+  + The x̄ represents the unbiased estimation of the population mean μ: __E[x̄] = μ__
+  + Affected by outliers
++ __Median__ : Value of x<sub>i</sub> such that 50% of the values are less than x<sub>i</sub> and 50% of the values are greater than x<sub>i</sub>.
+  + Robust with respect to outliers.
+  + Best estimate in _least absolute deviation_ sense.
++ __Mode__ : Value that occurs the most often (Most probable value)
+  + If it is a continuous distribution; this represents the maximum value of the density function. And you should expect most of the data to be clustered around this most probable value.
+  + Sometimes the distribution may have two modes - _bimodal distribution_ - in which case if you sample from such a distribution, you will find two clusters, one around each mode
+
+__Measures of Spread__ :
+
++ Represents the spread of the sample set (i.e.) how widely the data is ranging.
++ __Sample Variance__ : s<sup>2</sup> = (1/N-1) Σ<sub>i=1</sub><sup>N</sup> (x<sub>i</sub> - x̄)<sup>2</sup>
+  + Unbiased estimate of population variance: __E[s<sup>2</sup>] = σ<sup>2</sup>__
+  + Standard deviation = sqrt(Variance)
+  + Affected by outliers
+  + _Typically we divide by (N - 1) to indicate that if you have only one data point; it is not possible to estimate s<sup>2</sup>. For example, if you have one one data point s<sup>2</sup> will turn out to be 0 because the mean will be equal to the point. So, really speaking you have only (N - 1) data points to estimate the spread. So, that is why we divide by (N - 1) to indicate that one data point has been used up to estimate the parameter_
++ __Mean absolute deviation__ = (1/N) Σ<sub>i=1</sub><sup>N</sup> |x<sub>i</sub> - x̄|
+  + Robust with respect to outliers.
+  + Here also we can divide by (N - 1) instead of N using the same explanation provided above.
++ __Range__ : R = x<sub>max</sub> - x<sub>min</sub>
++ All of these give an indication of how much the data is spread around the central measure which is the mean or the mode or the median.
+
+Giving just a couple of these numbers will allow you to figure out some of the characteristics of the sample and that is the power of _sample statistics_.
+
