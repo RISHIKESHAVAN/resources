@@ -250,3 +250,85 @@ __Measures of Spread__ :
 
 Giving just a couple of these numbers will allow you to figure out some of the characteristics of the sample and that is the power of _sample statistics_.
 
+__Distribution of Sample mean and Sample variance__ :
+
++ __Sample mean__ :
+  + For any distribution, sample mean is unbiased estimate of population mean.
+  + If x<sub>i</sub> ~ N(μ, σ<sup>2</sup>) and all the observations are mutually independent, then __x̄ ~ N(μ, σ<sup>2</sup>/N)__.
+  + _Explanation_ : Let us say you draw  N observations from the distribution x<sub>i</sub> ~ N(μ, σ<sup>2</sup>) and these draws are independent and does not have any bias. If you compute the sample average from this set of independent samples, then you can prove that x̄ is also _normally distributed_ with the same population mean μ; which means the expected value of x̄ is μ and the expected variance of x̄, however, is σ<sup>2</sup>/N. So, the the variance of x̄ is actually lower than the variance of the individual observations. _The important point here to be noted is if I have N repeats from the same distribution and if I take the average of them, the average will be less noisy than the original observations_. So, one simple way of dealing with noise and reducing the noise content in observations is to take n observations at the same experimental condition and average them.
++ __Sample Variance__ :
+  + For any distribution, sample variance is unbiased estimate of population variance.
+  + If x<sub>i</sub> ~ N(μ, σ<sup>2</sup>) and all the observations are mutually independent, then __(N - 1)S<sup>2</sup> / σ<sup>2</sup> ~ χ<sup>2</sup><sub>N-1</sub>__ (i.e.) if we take (N - 1) times the _sample variance_ divided by the _population variance_; we can show that this particular measure is a chi-squared distribution with (N - 1) degrees of freedom.
+
+__Graphical Analysis__ :
+
++ __Histograms__ :
+  + Divide the range of values in the sample set into small intervals and count how many observations fall into each interval.
+  + For each interval, plot a rectangle with __width__ = inerval size and __height__ = number of observations in the interval called as the _frequency_.
+
+![hist](Histogram.gif)
+
++ __Box Plots__ :
+  + Find _quartiles_ (Q1 - 25th percentile, Q2 - median and Q3 - 75th percentile), minimum and maximum values in range.
+  + Box is between the Q1 and Q3 and the whiskers are between the min and max.
+
+![BoxandWhiskerExample](BoxandWhiskerExample.gif)
+
+![BoxandWhisker](BoxandWhisker.gif)
+
++ __Probability Plot__ (p-p or q-q plot) :
+  + Useful to know about the distribution of data.
+  + Determine different quantile values from sample set. Plot computed quantiles vs theoretical quantile values from chosen distribution.
+  + Here instead of determining just Q1, Q2, Q3 you compute several quantiles and then plot these quantiles against the distribution which you think this data might follow. If the data falls on the 45 degree line, then you can conclude that the sample data has been drawn from the appropriate distribution you are testing it against.
+  + So, this is useful for visually figuring out the distribution from which the data comes
+
++ __Scatter Plot__ :
+  + Plot one RV (y) against another RV (x) to examine whether there is any dependency.
+  + If the random variable y has a dependency on x, then the data will be aligned in a linear fashion. On the other hand, if there is no dependency the data will be randomly spread with no clear pattern
+
+___
+
+### __3.4 Hypothesis Testing__
+
+Hypothesis testing is an important activity when you want to make decisions from a set of data.
+
+The hypothesis is generally converted into a test for the mean or variance parameter of a population or perhaps a difference in themeans of two populations or the difference of variances of the population.
+
+A hypothesis is a statement or postulate about the parameter of a distribution (or model).
+
++ __Null Hypothesis H<sub>0</sub>__ : The default or status quo postulate that we wish to reject if the sample set provides sufficient evidence. In inferential statistics, the null hypothesis is a default hypothesis that a quantity to be measured is zero. (eg.) There is no change in the pressure of the engine hub and it is same as the original.
++ __Alternative Hypothesis H<sub>1</sub>__ : The alternative postulate that is accepted if the null hypothesis is rejected. (eg.) The pressure is increased.
+
+All Hypothesis tests will have Null and Alternate Hypothesis.
+
+__Hypothesis Testing Procedure__ :
+
++ Identify the parameter of interest (mean, variance, proportion) which you wish to test.
++ Construct the Null and Alternate hypotheses.
++ Compute a test statistic which is a function of the sample set of observations. The test statistic is a function of the observations. For example, if you are testing for the population mean you may use the sample mean as the test statistic. If you are testing for the population variance you may use the sample variance as test statistic and so on.
++ Derive the distribution of test statistic under the null hypothesis assumption (i.e.) if the Null Hypothesis is true, then what is the distribution of the test statistic.
++ Based on the above distribution, choose a test criterion (threshold) against which the test statistic is compared to reject/not reject the null hypothesis.
+
+No hypothesis test is perfect. There are inherent errors since it is based on observations that are random. The performance of the Hypothesis test depends on:
+
++ Extent of variability in data
++ Number of observations (Sample size)
++ Test Statistic (function of observations)
++ Test criterion (threshold)
+
+We don't have much control over the extent of variability in data. But we can control the sample size and the threshold to improve the performance of the test.
+
+__Types of Hypothesis test__ :
+
++ __Two-sided test__ : There are 2 thresholds - a lower criterion one and an upper threshold - which we select from an appropriate distribution. (eg.) H<sub>0</sub> : μ = 0, H<sub>1</sub> : μ != 0
++ __One-sided test__ : There is only one threshold - either upper or lower. (eg.) H<sub>0</sub> : μ = 0, H<sub>1</sub> : μ > 0
+
+__Errors in Hypothesis Testing__ :
+
++ There are two types of errors - __Type I__ and __Type II__
+
+![errorsinhyptest](ErrorsInHypTest.gif)
+
++ Type I error - false alarm. The probability of Type I error is denoted by __α__ and is also called as the __level of significance of the test__. This is the error that we typically control. It is controlled by choosing the criterion from the distribution of the test statistic under Null Hypothesis. This is easy to do because we solidly know the Null Hyp and the distribution for it and that is not the case with H<sub>1</sub>.
++ The probability of Type II error is denoted by __β__. You do not control the type II error probability. When you construct this hypothesis test to compute the test statistic and choose a threshold you basically try to control the Type I error probability. The Type II error probability results as a consequence of this.
++ There is a __trade-off__ between the Type I and II errors (i.e.) if we decrease Type I the Type II will increase and accordingly the test will be less or more sensitive.
