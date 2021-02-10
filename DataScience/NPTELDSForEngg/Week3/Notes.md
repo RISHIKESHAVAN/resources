@@ -120,7 +120,7 @@ __Gaussian or Normal Density Function__ :
 
 __Chi-square Density Function__ :
 
-![csdf](ChiSquareDensityFunction.gif)
+![csdf](ChiSquareDensityFunction.GIF)
 
 + Density is characterized by a parameter _n_ - Degrees of freedom.
 
@@ -185,9 +185,9 @@ __Multivariate Normal Distribution__ :
   + E[x] = μ : Mean vector
   + E[(x-μ)(x-μ)<sup>T</sup>] = Σ : Variance-covariance matrix
 
-![multivariatepdf](MultivariateNormalDistPDF.gif)
+![multivariatepdf](MultivariateNormalDistPDF.GIF)
 
-![covariancematrixstructure](MvNDStructureOfCovarianceMatrix.gif)
+![covariancematrixstructure](MvNDStructureOfCovarianceMatrix.GIF)
 
 + We can see that the covariance matrix is a square matrix with diagonal elements representing the _variance_ of each of the elements of RV vector x and the off-diagonal elements representing the _pair-wise covariance_.
 + We can completely characterize the multivariate normal distribution by specifying this mean vector μ and the covariance matrix Σ.
@@ -266,15 +266,15 @@ __Graphical Analysis__ :
   + Divide the range of values in the sample set into small intervals and count how many observations fall into each interval.
   + For each interval, plot a rectangle with __width__ = inerval size and __height__ = number of observations in the interval called as the _frequency_.
 
-![hist](Histogram.gif)
+![hist](Histogram.GIF)
 
 + __Box Plots__ :
   + Find _quartiles_ (Q1 - 25th percentile, Q2 - median and Q3 - 75th percentile), minimum and maximum values in range.
   + Box is between the Q1 and Q3 and the whiskers are between the min and max.
 
-![BoxandWhiskerExample](BoxandWhiskerExample.gif)
+![BoxandWhiskerExample](BoxandWhiskerExample.GIF)
 
-![BoxandWhisker](BoxandWhisker.gif)
+![BoxandWhisker](BoxandWhisker.GIF)
 
 + __Probability Plot__ (p-p or q-q plot) :
   + Useful to know about the distribution of data.
@@ -327,8 +327,14 @@ __Errors in Hypothesis Testing__ :
 
 + There are two types of errors - __Type I__ and __Type II__
 
-![errorsinhyptest](ErrorsInHypTest.gif)
+![errorsinhyptest](ErrorsInHypTest.GIF)
 
 + Type I error - false alarm. The probability of Type I error is denoted by __α__ and is also called as the __level of significance of the test__. This is the error that we typically control. It is controlled by choosing the criterion from the distribution of the test statistic under Null Hypothesis. This is easy to do because we solidly know the Null Hyp and the distribution for it and that is not the case with H<sub>1</sub>.
 + The probability of Type II error is denoted by __β__. You do not control the type II error probability. When you construct this hypothesis test to compute the test statistic and choose a threshold you basically try to control the Type I error probability. The Type II error probability results as a consequence of this.
 + There is a __trade-off__ between the Type I and II errors (i.e.) if we decrease Type I the Type II will increase and accordingly the test will be less or more sensitive.
+
+__Summary of Useful Hypothesis Test__ :
+
+![summary](SummaryOfHypTest.GIF)
+
+___
