@@ -179,3 +179,63 @@ So, in a multivariate case it gives us a way to identify points that could be op
 In summary:
 
 ![conditionssummary](OptimaConditionSummary2.GIF)
+
+---
+
+### __4.3 Unconstrained Multivariate Optimization (Continued)__
+
+> _We are going to look at some numerical methods to solve the Multivariate problems. But why do we need to learn them? Because, any data science algorithm can be thought of as some form of an optimization algorithm and the following techniques will also be used in finding the solution for those data science problems/algorithms. Also, these numerical methods are called as the learning rule in ML._
+
+__Directional Search__ :
+
+![directionalsearch](DirectionalSearch.GIF)
+
+We can see that there are several different points on the surface: local minimum, global minimum, local maximum, global maximum, saddle point. Our aim is to avoid points like _local minima_ and _saddle point_ because we know that when we reach such regions, while locally we cannot make our algorithm to find anything better, globally it is not the best.
+
+So, the aim is to reach the "bottom most region".
+
+So, while standing at a particular point, you look around and find the direction in which you will do down the fastest. This _direction_ is called the __Steepest descent__.
+
+So, the algorithm works in this way: From a point, find the steepest descent and then go in that direction for a _sensible amount of time_ or _length of step_. The reason for this is, you could find the steepest direction and keep going in that direction, but beyond a particular point, you do not really know if this is going to be the steepest descent. So, smarter strategy would be to find the steepest direction at wherever you are and then find how long you are going to move along this direction, go to the next point in the direction and then at that point reevaluate all the directions, and then find the new steepest descent direction. If it turns out that the direction that you are on is continuing to be the steepest descent direction, then you continue to go on that direction. If not, you find a new direction and then go in that new direction. This is the basic idea of all steepest descent algorithms.
+
+Lets say you follow the steepest descent algorithm and reach the local minimum. Then at that point you will find no direction to improve your objective function (i.e.) you cannot minimize your objective function anymore. In which case, you are stuck in the local minimum.
+
+There are optimization algorithms which try to get out of the local minimum. The only way to do it is to really climb up a little more away from the local minimum and then find new directions. And maybe you will find another direction which takes you to the global minimum. Thus in some cases we might construct these optimization algorithms in such a way that, you might actually make your objective function worse in the interim looking for better solutions than your local optimum solution.
+
+__Descent direction and movement - Mathematics__ :
+
+![descentdirandmovement](DescentDirMovement.GIF)
+
+__x<sup>k+1</sup> = x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>__
+
+where, x<sup>k</sup> -> current point of the k<sup>th</sup> iteration (the starting point); α<sup>k</sup> -> __Step length__; s<sup>k</sup> -> __Search direction__ and x<sup>k+1</sup> -> is the new point which is better than x<sup>k</sup> generally.
+
+Once we know the starting point and the direction, all we need to know is the step length. If α<sup>k</sup> is small then the x<sup>k+1</sup>th point will be closer to x<sup>k</sup> and vice versa.
+
+In the equation, x<sup>k</sup> will be a (nx1) vector (where n -> number of decision variables), the search direction s<sup>k</sup> will also be a (nx1) vector and α<sup>k</sup> will be a scalar.
+
+In case we have already figured out the direction (we will do that later), then all we need to know is the __step length__. Since the step length is a scalar, _the multivariate problem has now been broken down into a search direction computation and a univariate optimization of finding the step length (since it is a scalar)_.
+
++ In ML, this is called the __learning rule__ - because we are learning to go to a new point which is better than the current point.
++ In neural networks:
+  + Back-propagation algorithm
+  + Same gradient descent with application of chain rule
++ In clustering:
+  + Minimization of an Euclidean distance norm
+
+__Steepest descent and optimum step size__ :
+
+> With all of these optimization algorithms, you would have to start with something called an __initialization__ which is x<sup>0</sup>, and this is true for machine learning algorithms also. All of them have to start at some point and depending on where you start, when you go through the sequence of steps in the algorithm, you will end up at some point x<sup>*</sup>, and in many cases if the problem is non-convex, (i.e.) there are multiple local minima and global minima, the point that you will end up is dependent on not only the algorithm, but also on the initialization point. That is the reason why in some cases if you run the same algorithm many times and if the choice of the initialization is randomized, every time you might get slightly different results. So, to interpret the difference in the results you have to really think about how the initialization is done.
+
+Steepest descent:
+
++ An iteration k starting at point x<sup>k</sup>.
++ Then we need to find the search direction: s<sup>k</sup> = Negative gradient of f(x) = -∇f(x<sup>k</sup>)
++ Now, in the equation x<sup>k+1</sup> = x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>, we know x<sup>k</sup> and s<sup>k</sup>. So the only remaining thing is the step value α<sup>k</sup> which is given as f(x<sup>k+1</sup>) = f(x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>) = f(α) [since we know everything except for α, it becomes a function of α] = is a minimum (univariate minimization)
++ Any univariate algorithm can be deployed to find the value of α.
++ Now that we know all the necessary values, we can substitute them in the equation starting with x<sup>0</sup> and go on to find the the values of successive x<sup>k</sup> values till you reach the convergence.
+
+> In ML, the α is known as the __learning rate__ and sometimes it is fixed or can be found by optimization.
+
+---
+
