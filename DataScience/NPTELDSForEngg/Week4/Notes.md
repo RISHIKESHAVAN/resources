@@ -135,7 +135,7 @@ Comparing with the _Univariate case_ where we had the following 2 conditions for
 
 in the Multivariate case, the equivalent of __f'(x)__ is given by the __gradient__
 
-![graient](Gradient.GIF)
+![graient](gradient.GIF)
 
 In the Univariate case, as there was only one decision variable we took the derivative of it. But here it will be a _vector_, with each component being a _partial derivative_ with respect to each decision variable.
 
@@ -230,12 +230,11 @@ __Steepest descent and optimum step size__ :
 Steepest descent:
 
 + An iteration k starting at point x<sup>k</sup>.
-+ Then we need to find the search direction: s<sup>k</sup> = Negative gradient of f(x) = -∇f(x<sup>k</sup>)
-+ Now, in the equation x<sup>k+1</sup> = x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>, we know x<sup>k</sup> and s<sup>k</sup>. So the only remaining thing is the step value α<sup>k</sup> which is given as f(x<sup>k+1</sup>) = f(x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>) = f(α) [since we know everything except for α, it becomes a function of α] = is a minimum (univariate minimization)
++ Then we need to find the search direction: s<sup>k</sup> = Negative gradient of f(x) = __-∇f(x<sup>k</sup>)__
++ Now, in the equation x<sup>k+1</sup> = x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>, we know x<sup>k</sup> and s<sup>k</sup>. So the only remaining thing is the step value α<sup>k</sup> which is given as f(x<sup>k+1</sup>) = f(x<sup>k</sup> + α<sup>k</sup>s<sup>k</sup>) = f(α) [since we know everything except for α, it becomes a function of α] = __is a minimum (univariate minimization)__
 + Any univariate algorithm can be deployed to find the value of α.
 + Now that we know all the necessary values, we can substitute them in the equation starting with x<sup>0</sup> and go on to find the the values of successive x<sup>k</sup> values till you reach the convergence.
 
 > In ML, the α is known as the __learning rate__ and sometimes it is fixed or can be found by optimization.
 
 ---
-
