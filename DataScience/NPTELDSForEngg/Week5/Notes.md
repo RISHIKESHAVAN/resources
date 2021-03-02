@@ -2,7 +2,7 @@
 
 ## __Week 5 - Optimization (Contd.)__
 
-### __4.1 Multivariate Optimaization with Equality Constraints__
+### __5.1 Multivariate Optimaization with Equality Constraints__
 
 > Unconstrained minimum is not the same as constrained minimum.
 
@@ -18,7 +18,7 @@ Gradient lies in the space spanned by the normal of the gradients.
 
 ---
 
-### __4.2 Multivariate Optimaization with In-Equality Constraints__
+### __5.2 Multivariate Optimaization with In-Equality Constraints__
 
 > Why do we need inequality constraint problems? They primarily come into picture when we have to categorize the points on either side of the line. Any point > 0 will be on one side of the line and any point < 0  will be on the other side with the line being 0.
 
@@ -50,7 +50,7 @@ _The μs have to be positive_.
 
 ---
 
-### __4.3 Introduction to Data Science__
+### __5.3 Introduction to Data Science__
 
 __Popular Techniques__ :
 
@@ -91,7 +91,7 @@ __Thought Experiment__ :
 
 ---
 
-### __4.4 Data Imputation__
+### __5.4 Data Imputation__
 
 + __Step 1__ : _Problem definition_ - Define the problem as broad as possible so that anyone can understand it.
 + __Step 2__ : _Problem Characterization_ - What type of problem is this?, What steps can be done to achieve a solution for the problem?
