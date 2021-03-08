@@ -21,8 +21,10 @@ contract SendMoney {
     
     /**
      * Transfer the balance to the mentioned address.
+     * Note that the gas cost will be borne by the caller.
      **/
     function transferAmountTo(address payable toAddress) public {
+        totalAmountSent += address(this).balance;
         toAddress.transfer(this.getBalance());
     }
     
@@ -30,7 +32,9 @@ contract SendMoney {
      * Transfer the balance to the caller
      **/
     function transferAmountToCaller() public {
-        payable (msg.sender).transfer(this.getBalance());
+        totalAmountSent += address(this).balance;
+        address payable toAddress = payable(msg.sender);
+        toAddress.transfer(this.getBalance());
     }
     
 
