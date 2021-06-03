@@ -1,0 +1,15 @@
+MITx 6.00.1x - Introduction to Computer Science and Programming Using Python
+
+Unit 1: Python Basics
+
+Types of knowledge:
+
+1. Declarative Knowledge: A statement of fact
+2. Imperative Knowledge: A recipe or "how-to"
+
+What is a recipe?
+1. A sequence of simple steps
+2. flow of control process that specifies when each step is executed
+3. a means of determining when to stop
+
+1 + 2 + 3 -> an algorithm!
