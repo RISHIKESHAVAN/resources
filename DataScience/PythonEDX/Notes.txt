@@ -1,5 +1,7 @@
 MITx 6.00.1x - Introduction to Computer Science and Programming Using Python
 
+(For detailed notes, refer the notes pdf.)
+
 Unit 1: Python Basics
 
 Types of knowledge:
@@ -13,3 +15,31 @@ What is a recipe?
 3. a means of determining when to stop
 
 1 + 2 + 3 -> an algorithm!
+
+How to capture the recipe in a mechanical process?
+1. Fixed program computer: e.g. a calculator, Alan Turing Bombe - which do only a specific function.
+2. Stored program computer: It stores and executes the instruction. It will contain a set of parts that go through the instructions and whenever asked to. In particular, there is the "interpreter" which goes through the sequence of instructions in order and doing the computation that we want.
+
+Basic Machine Architecture:
+1. Input
+2. Output
+3. Memory
+4. Control Unit (+ program counter) -> to keep track of what operation has been done in the ALU
+5. Arithmetic Logic Unit -> to do primitive ops
+
+Language:
+1. A programming language provides a set of primitive OPERATIONS
+2. EXPRESSIONS are complex but legal combinations of primitives in a programming language
+3. Expressions and computations have VALUES in a programming language.
+
+Aspects of Language:
+1. Primitive constructs: eg. numbers, strings, simple operators
+2. Syntax - syntactic errors are easily caught.
+3. Static semantics - are which syntactically valid strings have meaning.
+4. Semantics - is the meaning associated with a syntactically correct string of symbols with no static semantic errors. In programming languages, there is only on meaning. But it might not be the meaning that the programmer intended.
+
+Types:
+1. A PROGRAM is a sequence of DEFINITIONS (which are evaluated) and COMMANDS (which are executed by Python interpreter in a shell).
+2. Programs manipulate data OBJECTS. All objects have a TYPE that defines the kind of things that a program can do to them. Objects are SCALAR (cannot be subdivided) or NON-SCALAR (have integral structure that can be accessed)
+
+
